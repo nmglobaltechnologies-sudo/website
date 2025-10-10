@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "quote": "NM Global Technologies transformed our operations with their NetSuite implementation. The team was professional, knowledgeable, and delivered on time.",
+    "author": "Sarah Chen",
+    "position": "COO",
+    "company": "TechManufacture Inc.",
+    "logo": "/images/clients/techmanufacture.png"
+  },
+  {
+    "id": "2",
+    "quote": "Their cloud migration expertise saved us hundreds of thousands in infrastructure costs while improving our system performance significantly.",
+    "author": "Michael Rodriguez",
+    "position": "CTO",
+    "company": "FinanceFirst Group",
+    "logo": "/images/clients/financefirst.png"
+  },
+  {
+    "id": "3",
+    "quote": "The managed IT services from NM Global have been a game-changer. We can now focus on patient care while they handle all our IT needs flawlessly.",
+    "author": "Dr. Emily Watson",
+    "position": "Director of IT",
+    "company": "Regional Health Network",
+    "logo": "/images/clients/healthnetwork.png"
+  },
+  {
+    "id": "4",
+    "quote": "Outstanding partnership. Their team understood our business needs and delivered a solution that exceeded our expectations.",
+    "author": "James Thompson",
+    "position": "VP of Operations",
+    "company": "Global Logistics Solutions",
+    "logo": "/images/clients/logistics.png"
+  }
+]
+
