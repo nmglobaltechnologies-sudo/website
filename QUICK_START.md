@@ -49,10 +49,14 @@ content/
    - Replace placeholder text
    - Add real team photos (update paths in `team.json`)
 
-2. **Configure Email**
+2. **Configure Email** (Optional - needed for contact form)
+   - Create `.env.local` from template:
+     ```bash
+     # Copy the template file
+     cp env-template.txt .env.local
+     ```
    - Choose email service (AWS SES, SendGrid, or SMTP)
-   - Copy `env-template.txt` to `.env.local`
-   - Add your credentials
+   - Add your credentials to `.env.local`
    - Update `app/api/contact/route.ts` with actual email logic
 
 3. **Add Images**

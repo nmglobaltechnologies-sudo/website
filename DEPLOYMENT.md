@@ -8,12 +8,22 @@
 
 ## Environment Setup
 
-1. Copy `env-template.txt` to `.env.local`:
+**Important:** The project includes `env-template.txt` with example environment variables. You need to create your own `.env.local` file.
+
+1. Create `.env.local` from the template:
 ```bash
+# On Mac/Linux:
 cp env-template.txt .env.local
+
+# On Windows PowerShell:
+Copy-Item env-template.txt .env.local
+
+# Or manually: Create a new file named .env.local and copy contents from env-template.txt
 ```
 
-2. Fill in the required environment variables in `.env.local`
+2. Edit `.env.local` and fill in your actual values (API keys, email credentials, etc.)
+
+**Note:** `.env.local` is ignored by Git for security - never commit it to your repository!
 
 ## Local Development
 
@@ -48,7 +58,10 @@ git push -u origin main
    - Go to [vercel.com](https://vercel.com)
    - Click "New Project"
    - Import your GitHub repository
-   - Configure environment variables (copy from `.env.local`)
+   - Configure environment variables:
+     * Click "Environment Variables"
+     * Copy values from your `.env.local` file (or use `env-template.txt` as reference)
+     * Add each variable (e.g., CONTACT_EMAIL, SENDGRID_API_KEY, etc.)
    - Click "Deploy"
 
 3. **Custom Domain:**
