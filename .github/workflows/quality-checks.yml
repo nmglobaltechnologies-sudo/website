@@ -1,0 +1,56 @@
+name: Quality Checks
+
+# Run on push and pull requests
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'website/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'website/**'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: website/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ./website
+        run: npm ci
+
+      - name: Run ESLint
+        working-directory: ./website
+        run: npm run lint
+
+      - name: Type check with TypeScript
+        working-directory: ./website
+        run: npx tsc --noEmit
+
+      - name: Build project
+        working-directory: ./website
+        run: npm run build
+        
+      - name: Check build size
+        working-directory: ./website
+        run: |
+          echo "Build completed successfully!"
+          du -sh .next
+          
+      - name: Success message
+        if: success()
+        run: |
+          echo "✅ All quality checks passed!"
+          echo "Vercel will automatically deploy this to production."
+
