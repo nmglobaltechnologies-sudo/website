@@ -1,0 +1,33 @@
+# Environment Variables Template
+# Copy this file to .env.local and fill in your values
+
+# Contact Form Email Configuration
+CONTACT_EMAIL=info@nmglobal.com
+FROM_EMAIL=noreply@nmglobal.com
+
+# Email Service Provider (Choose one)
+
+# Option 1: AWS SES
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=your_aws_access_key_here
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key_here
+
+# Option 2: SendGrid
+SENDGRID_API_KEY=your_sendgrid_api_key_here
+
+# Option 3: Generic SMTP
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=your_smtp_username
+SMTP_PASS=your_smtp_password
+
+# Analytics
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+
+# reCAPTCHA (Optional - for spam protection)
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=your_site_key_here
+RECAPTCHA_SECRET_KEY=your_secret_key_here
+
+# Environment
+NODE_ENV=development
+

@@ -1,0 +1,29 @@
+{
+  "stats": [
+    {
+      "id": "years",
+      "value": 15,
+      "suffix": "+",
+      "label": "Years of Excellence"
+    },
+    {
+      "id": "clients",
+      "value": 200,
+      "suffix": "+",
+      "label": "Global Clients"
+    },
+    {
+      "id": "countries",
+      "value": 12,
+      "suffix": "",
+      "label": "Countries Served"
+    },
+    {
+      "id": "satisfaction",
+      "value": 98,
+      "suffix": "%",
+      "label": "Client Satisfaction"
+    }
+  ]
+}
+

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "erp-solutions",
+    "title": "ERP Solutions",
+    "slug": "erp-solutions",
+    "shortDescription": "Comprehensive ERP implementation, customization, and support for Oracle, NetSuite, and leading platforms.",
+    "icon": "database",
+    "features": [
+      "Oracle NetSuite Implementation",
+      "ERP Customization & Integration",
+      "Business Process Optimization",
+      "Legacy System Migration",
+      "Ongoing Support & Maintenance"
+    ],
+    "longDescription": "Transform your business operations with our expert ERP solutions. We specialize in implementing and customizing Oracle NetSuite and other leading ERP platforms to streamline your processes, improve data visibility, and drive operational efficiency.",
+    "benefits": [
+      "Reduce operational costs by up to 40%",
+      "Improve data accuracy and real-time visibility",
+      "Streamline business processes across departments",
+      "Scale efficiently as your business grows"
+    ],
+    "caseStudy": {
+      "title": "Manufacturing Company Increases Efficiency by 35%",
+      "description": "A mid-sized manufacturing firm reduced order processing time from 48 hours to 6 hours after implementing our customized NetSuite solution."
+    }
+  },
+  {
+    "id": "cloud-services",
+    "title": "Cloud Services",
+    "slug": "cloud-services",
+    "shortDescription": "Cloud migration, architecture design, and management services for AWS, Azure, and Google Cloud.",
+    "icon": "cloud",
+    "features": [
+      "Cloud Migration Strategy & Execution",
+      "Multi-Cloud Architecture Design",
+      "Cloud Security & Compliance",
+      "Cost Optimization",
+      "DevOps & CI/CD Implementation"
+    ],
+    "longDescription": "Accelerate your digital transformation with our cloud services. We help businesses migrate to the cloud, optimize cloud infrastructure, and implement best practices for security, scalability, and cost efficiency.",
+    "benefits": [
+      "Reduce infrastructure costs by 30-50%",
+      "Improve application performance and scalability",
+      "Enhanced security and disaster recovery",
+      "Faster deployment and time-to-market"
+    ],
+    "caseStudy": {
+      "title": "Financial Services Firm Saves $200K Annually",
+      "description": "Our cloud optimization strategy reduced infrastructure costs by 45% while improving application performance by 60%."
+    }
+  },
+  {
+    "id": "managed-it-services",
+    "title": "Managed IT Services",
+    "slug": "managed-it-services",
+    "shortDescription": "Comprehensive IT infrastructure management, 24/7 support, and proactive monitoring.",
+    "icon": "server",
+    "features": [
+      "24/7 Infrastructure Monitoring",
+      "Help Desk & Technical Support",
+      "Network Management & Security",
+      "Backup & Disaster Recovery",
+      "IT Strategy & Consulting"
+    ],
+    "longDescription": "Focus on your core business while we manage your IT infrastructure. Our managed services provide proactive monitoring, rapid issue resolution, and strategic guidance to keep your systems running smoothly.",
+    "benefits": [
+      "99.9% uptime guarantee",
+      "Reduce IT costs by up to 40%",
+      "Access to expert IT professionals",
+      "Predictable monthly costs"
+    ],
+    "caseStudy": {
+      "title": "Healthcare Provider Achieves 99.99% Uptime",
+      "description": "Our managed services helped a healthcare network eliminate downtime and improve patient care systems reliability."
+    }
+  }
+]
+

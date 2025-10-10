@@ -1,0 +1,35 @@
+[
+  {
+    "id": "1",
+    "name": "Naveen Mahajan",
+    "position": "CEO & Founder",
+    "bio": "With over 20 years in enterprise IT, Naveen leads NM Global's vision for digital transformation and client success.",
+    "image": "/images/team/naveen-mahajan.jpg",
+    "linkedin": "https://linkedin.com/in/naveen-mahajan"
+  },
+  {
+    "id": "2",
+    "name": "Priya Sharma",
+    "position": "Chief Technology Officer",
+    "bio": "Priya oversees technology strategy and drives innovation across our cloud and ERP solutions portfolio.",
+    "image": "/images/team/priya-sharma.jpg",
+    "linkedin": "https://linkedin.com/in/priya-sharma"
+  },
+  {
+    "id": "3",
+    "name": "David Anderson",
+    "position": "VP of Cloud Services",
+    "bio": "David brings 15+ years of cloud architecture experience, leading our cloud transformation initiatives.",
+    "image": "/images/team/david-anderson.jpg",
+    "linkedin": "https://linkedin.com/in/david-anderson"
+  },
+  {
+    "id": "4",
+    "name": "Rajesh Kumar",
+    "position": "Director of ERP Solutions",
+    "bio": "Rajesh specializes in Oracle NetSuite implementations with a track record of 100+ successful projects.",
+    "image": "/images/team/rajesh-kumar.jpg",
+    "linkedin": "https://linkedin.com/in/rajesh-kumar"
+  }
+]
+
