@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from './Button';
 
@@ -42,13 +43,17 @@ export const Header: React.FC = () => {
       }`}
     >
       <nav className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold">
-              <span className="text-primary">NM</span>
-              <span className="text-accent"> Global</span>
-            </div>
+            <Image 
+              src="/images/logo.png" 
+              alt="NM Global Technologies" 
+              width={400} 
+              height={115}
+              priority
+              className="h-20 md:h-[100px] w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}

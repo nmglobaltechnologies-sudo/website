@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -23,9 +24,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Tagline */}
           <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-white">NM</span>
-              <span className="text-accent"> Global</span>
+            <div className="mb-4">
+              <Image 
+                src="/images/logo.png" 
+                alt="NM Global Technologies" 
+                width={350} 
+                height={100}
+                className="h-20 md:h-[100px] w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               Empowering Digital Enterprises with Smart IT Solutions.

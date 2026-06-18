@@ -21,6 +21,10 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "NM Global Technologies | ERP, Cloud & Managed IT Services",
   description: "Empowering Digital Enterprises with Smart IT Solutions. Leading provider of ERP, Cloud, and Managed IT services for global businesses.",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -34,7 +38,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${openSans.variable} antialiased`}
       >
         <Header />
-        <main className="pt-20">
+        <main className="pt-24 md:pt-28">
           {children}
         </main>
         <Footer />
