@@ -15,10 +15,22 @@ export default function IndustriesPage() {
       solutions: ['Production Planning', 'Quality Control', 'Supply Chain Management'],
     },
     {
-      icon: '💰',
-      title: 'Financial Services',
-      description: 'Secure, compliant IT infrastructure and cloud solutions for banking, insurance, and investment firms.',
-      solutions: ['Risk Management', 'Compliance Solutions', 'Data Security'],
+      icon: '🏗️',
+      title: 'Construction',
+      description: 'Project management, resource planning, and cost tracking solutions for construction firms.',
+      solutions: ['Project Management', 'Resource Planning', 'Cost Tracking'],
+    },
+    {
+      icon: '📦',
+      title: 'Distribution',
+      description: 'Warehouse management, inventory optimization, and logistics solutions for distribution centers.',
+      solutions: ['Warehouse Management', 'Inventory Optimization', 'Logistics'],
+    },
+    {
+      icon: '🛒',
+      title: 'Retail',
+      description: 'Omnichannel retail solutions, inventory management, and customer experience platforms.',
+      solutions: ['Point of Sale', 'Inventory Management', 'Customer Analytics'],
     },
     {
       icon: '🏥',
@@ -28,33 +40,9 @@ export default function IndustriesPage() {
     },
     {
       icon: '🚚',
-      title: 'Logistics & Distribution',
+      title: 'Logistics',
       description: 'Real-time tracking, warehouse management, and optimization solutions for supply chain excellence.',
       solutions: ['Fleet Management', 'Warehouse Automation', 'Route Optimization'],
-    },
-    {
-      icon: '🛒',
-      title: 'Retail & E-commerce',
-      description: 'Omnichannel retail solutions, inventory management, and customer experience platforms.',
-      solutions: ['Point of Sale', 'Inventory Management', 'Customer Analytics'],
-    },
-    {
-      icon: '⚡',
-      title: 'Energy & Utilities',
-      description: 'Infrastructure management, asset tracking, and regulatory compliance for energy sector.',
-      solutions: ['Asset Management', 'Grid Management', 'Compliance Reporting'],
-    },
-    {
-      icon: '🏢',
-      title: 'Professional Services',
-      description: 'Project management, time tracking, and client management solutions for consulting and service firms.',
-      solutions: ['Project Management', 'Resource Planning', 'Billing & Invoicing'],
-    },
-    {
-      icon: '🎓',
-      title: 'Education',
-      description: 'Learning management systems, student information systems, and campus IT infrastructure.',
-      solutions: ['Student Management', 'Learning Platforms', 'Campus IT'],
     },
   ];
 
@@ -134,8 +122,8 @@ export default function IndustriesPage() {
               solution: 'Enterprise-grade security measures tailored to your industry requirements.',
             },
             {
-              challenge: 'Scalability',
-              solution: 'Flexible cloud architecture that grows with your business demands.',
+              challenge: 'Supply Chain Optimization',
+              solution: 'Real-time tracking and analytics to optimize inventory and logistics.',
             },
             {
               challenge: 'Operational Efficiency',
@@ -173,7 +161,7 @@ export default function IndustriesPage() {
             { metric: '40%', label: 'Cost Reduction' },
             { metric: '60%', label: 'Faster Processes' },
             { metric: '99.9%', label: 'Uptime' },
-            { metric: '200+', label: 'Satisfied Clients' },
+            { metric: '500+', label: 'Satisfied Clients' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-4xl md:text-5xl font-bold text-accent mb-2">

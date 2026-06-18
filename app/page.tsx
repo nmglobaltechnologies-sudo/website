@@ -6,12 +6,10 @@ import { Button } from '@/components/Button';
 import { Section, SectionHeader } from '@/components/Section';
 import { ServiceCard } from '@/components/Card';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
-import { TestimonialCarousel } from '@/components/TestimonialCard';
 import { CTABanner } from '@/components/CTABanner';
 
 import servicesData from '@/content/services.json';
 import statsData from '@/content/stats.json';
-import testimonialsData from '@/content/testimonials.json';
 
 export default function HomePage() {
   return (
@@ -26,11 +24,10 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Driving Digital Transformation<br />
-              with Intelligent IT Solutions
+              Enterprise Software, ERP, Cloud & Digital Transformation Solutions
             </h1>
             <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90">
-              ERP, Cloud, and Managed Services tailored for enterprise success.
+              Full-service technology solutions company delivering comprehensive ERP consulting, software development, cloud services, AI solutions, and managed support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button href="/contact" variant="secondary" size="lg">
@@ -53,15 +50,15 @@ export default function HomePage() {
       <Section>
         <div className="max-w-4xl mx-auto text-center">
           <SectionHeader
-            title="Empowering Enterprises Since 2009"
-            subtitle="Your Global Partner for Cloud and ERP Success"
+            title="Empowering Enterprises"
+            subtitle="Fresh Perspectives for Modern Business Challenges"
           />
           <div className="space-y-4 text-lg text-neutral leading-relaxed">
             <p>
-              NM Global Technologies is a leading provider of enterprise IT solutions, specializing in ERP implementation, cloud transformation, and managed IT services. With over 15 years of experience, we&apos;ve helped more than 200 organizations across 12 countries achieve their digital transformation goals.
+              NM Global Technologies is a dynamic startup specializing in ERP implementation, cloud transformation, and managed IT services. We're building a future-focused approach to enterprise technology solutions.
             </p>
             <p>
-              Our team of certified experts brings deep industry knowledge and technical expertise to deliver solutions that drive efficiency, reduce costs, and enable sustainable growth. From Fortune 500 companies to growing mid-market firms, we partner with organizations to turn technology challenges into competitive advantages.
+              Our agile team combines technical expertise with innovative thinking to deliver solutions that drive efficiency, reduce costs, and enable sustainable growth for businesses ready to embrace modern technology.
             </p>
           </div>
           <div className="mt-8">
@@ -98,8 +95,8 @@ export default function HomePage() {
       {/* Stats Section */}
       <Section background="primary">
         <SectionHeader
-          title="By the Numbers"
-          subtitle="Our track record of delivering excellence"
+          title="Our Commitment"
+          subtitle="Building excellence from day one"
         />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {statsData.stats.map((stat) => (
@@ -123,20 +120,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Client Testimonials */}
-      <Section>
-        <SectionHeader
-          title="What Our Clients Say"
-          subtitle="Trusted by leading organizations worldwide"
-        />
-        <TestimonialCarousel testimonials={testimonialsData} />
-      </Section>
-
       {/* Featured Case Studies */}
       <Section background="gray">
         <SectionHeader
-          title="Success Stories"
-          subtitle="Real results from our client partnerships"
+          title="Our Expertise"
+          subtitle="Ready to deliver cutting-edge solutions"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesData.map((service) => (
@@ -174,9 +162,9 @@ export default function HomePage() {
       {/* CTA Banner */}
       <Section>
         <CTABanner
-          title="Need help implementing your ERP? Let's talk."
-          description="Our expert team is ready to guide you through your digital transformation journey."
-          primaryButtonText="Schedule Consultation"
+          title="Ready to start your digital transformation journey?"
+          description="Let's discuss how we can help modernize your business with innovative IT solutions."
+          primaryButtonText="Get Started"
           primaryButtonLink="/contact"
           secondaryButtonText="View Our Services"
           secondaryButtonLink="/services"

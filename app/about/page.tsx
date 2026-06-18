@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Section, SectionHeader } from '@/components/Section';
 import { Card } from '@/components/Card';
 import { CTABanner } from '@/components/CTABanner';
-import teamData from '@/content/team.json';
 
 export default function AboutPage() {
   const values = [
@@ -26,18 +25,17 @@ export default function AboutPage() {
     },
     {
       icon: '🌍',
-      title: 'Global Reach',
-      description: 'With presence across 12 countries, we deliver localized expertise with global best practices.',
+      title: 'Client-Centric',
+      description: 'We prioritize your success, building solutions tailored to your unique business needs.',
     },
   ];
 
   const timeline = [
-    { year: '2009', event: 'NM Global Technologies founded with a vision to transform enterprise IT' },
-    { year: '2012', event: 'Expanded to 5 countries, achieved Oracle NetSuite Partner status' },
-    { year: '2015', event: 'Reached 100 clients milestone, launched Cloud Services division' },
-    { year: '2018', event: 'Opened US headquarters, grew team to 150+ professionals' },
-    { year: '2021', event: 'Achieved AWS Advanced Consulting Partner status' },
-    { year: '2025', event: 'Serving 200+ clients across 12 countries, 98% client satisfaction' },
+    { year: '2008', event: 'NM Global Technologies founded with a vision to help businesses leverage technology for success' },
+    { year: '2012', event: 'Expanded services to include comprehensive ERP solutions and cloud services' },
+    { year: '2016', event: 'Reached 100+ clients across multiple industries with proven implementation success' },
+    { year: '2020', event: 'Added AI and data analytics capabilities to our technology portfolio' },
+    { year: '2024', event: 'Celebrating 16 years of innovation and client success' },
   ];
 
   return (
@@ -54,7 +52,7 @@ export default function AboutPage() {
               About NM Global Technologies
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
-              Your trusted partner in digital transformation since 2009
+              Your emerging partner in digital transformation
             </p>
           </motion.div>
         </div>
@@ -65,17 +63,17 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <SectionHeader
             title="Our Story"
-            subtitle="Building the future of enterprise technology"
+            subtitle="Building enterprise technology solutions since 2008"
           />
           <div className="space-y-6 text-lg text-neutral leading-relaxed">
             <p>
-              Founded in 2009, NM Global Technologies emerged from a simple vision: to help businesses harness the power of technology to achieve their goals. What started as a small team of passionate IT professionals has grown into a global organization serving clients across three continents.
+              Founded in 2008, NM Global Technologies has grown from a small consulting firm to a full-service technology solutions company with a proven track record of helping businesses transform through technology. Our journey began with a simple mission: to help enterprises leverage technology to achieve their strategic objectives.
             </p>
             <p>
-              Today, we specialize in three core areas: ERP Solutions, Cloud Services, and Managed IT Services. Our team of over 150 certified professionals brings deep expertise in Oracle NetSuite, AWS, Azure, and comprehensive IT infrastructure management.
+              Over the years, we've expanded our expertise to encompass comprehensive ERP solutions, custom software development, cloud infrastructure services, artificial intelligence, and managed IT services. Our team of seasoned professionals brings decades of combined experience in Oracle, SAP, JD Edwards, Microsoft Dynamics, AWS, Azure, and Oracle Cloud.
             </p>
             <p>
-              We&apos;re proud to have helped more than 200 organizations streamline their operations, reduce costs, and accelerate growth. From manufacturing firms to financial services companies, healthcare providers to logistics operations, our solutions are transforming businesses worldwide.
+              Today, we're proud to serve clients across multiple industries, delivering innovative technology solutions that drive efficiency, reduce costs, and enable sustainable growth. Our established reputation for excellence and client success has made us a trusted partner for businesses seeking digital transformation.
             </p>
           </div>
         </div>
@@ -87,13 +85,13 @@ export default function AboutPage() {
           <Card>
             <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
             <p className="text-neutral leading-relaxed">
-              To empower businesses with intelligent technology solutions that drive efficiency, innovation, and sustainable growth. We&apos;re committed to being more than just a service provider—we&apos;re a strategic partner invested in our clients&apos; success.
+              To empower businesses with intelligent technology solutions that drive efficiency, innovation, and sustainable growth. As a startup, we're agile, innovative, and completely focused on delivering exceptional value to every client we serve.
             </p>
           </Card>
           <Card>
             <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
             <p className="text-neutral leading-relaxed">
-              To be the world&apos;s most trusted partner for enterprise digital transformation. We envision a future where technology seamlessly enables business success, and we&apos;re dedicated to making that future a reality for every client we serve.
+              To become a trusted partner for enterprise digital transformation, bringing fresh perspectives and innovative solutions to businesses worldwide. We envision a future where technology seamlessly enables business success, and we're building that future one client at a time.
             </p>
           </Card>
         </div>
@@ -128,7 +126,7 @@ export default function AboutPage() {
       <Section background="gray">
         <SectionHeader
           title="Our Journey"
-          subtitle="Milestones that shaped our growth"
+          subtitle="Building our story from day one"
         />
         <div className="max-w-4xl mx-auto">
           <div className="space-y-8">
@@ -153,60 +151,29 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Leadership Team */}
-      <Section>
-        <SectionHeader
-          title="Leadership Team"
-          subtitle="Meet the experts driving our vision forward"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamData.map((member) => (
-            <motion.div
-              key={member.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-4xl font-bold">
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </div>
-                <h3 className="text-lg font-bold text-primary mb-1">{member.name}</h3>
-                <p className="text-sm text-accent font-semibold mb-3">{member.position}</p>
-                <p className="text-sm text-neutral mb-4">{member.bio}</p>
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-accent hover:text-primary transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </a>
-                )}
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Global Presence */}
+      {/* Why Choose Us */}
       <Section background="primary">
         <div className="text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Global Presence</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose NM Global?</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            With offices and partners across North America, Europe, and Asia, we deliver local expertise with global standards.
+            With 16 years of experience, we combine established expertise with innovative thinking to deliver exceptional technology solutions.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {['🇺🇸 United States', '🇬🇧 United Kingdom', '🇮🇳 India', '🇩🇪 Germany'].map((country) => (
-              <div key={country} className="text-center">
-                <p className="text-2xl mb-2">{country.split(' ')[0]}</p>
-                <p className="text-sm opacity-90">{country.split(' ').slice(1).join(' ')}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="text-5xl mb-4">🏆</div>
+              <h3 className="text-xl font-bold mb-2">Proven Track Record</h3>
+              <p className="opacity-90">16+ years of successful implementations with 500+ satisfied clients across multiple industries</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">💼</div>
+              <h3 className="text-xl font-bold mb-2">Industry Expertise</h3>
+              <p className="opacity-90">Deep knowledge of manufacturing, distribution, construction, retail, healthcare, and logistics sectors</p>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl mb-4">🔧</div>
+              <h3 className="text-xl font-bold mb-2">Technical Excellence</h3>
+              <p className="opacity-90">Team of certified Oracle, SAP, AWS, Azure, and Microsoft experts with decades of combined experience</p>
+            </div>
           </div>
         </div>
       </Section>

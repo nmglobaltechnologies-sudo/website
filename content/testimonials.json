@@ -1,35 +1,51 @@
 [
   {
     "id": "1",
-    "quote": "NM Global Technologies transformed our operations with their NetSuite implementation. The team was professional, knowledgeable, and delivered on time.",
-    "author": "Sarah Chen",
-    "position": "COO",
-    "company": "TechManufacture Inc.",
-    "logo": "/images/clients/techmanufacture.png"
+    "quote": "NM Global Technologies transformed our operations with their comprehensive ERP implementation. Their expertise in JD Edwards and SAP solutions helped us streamline processes and achieve significant cost savings.",
+    "author": "Robert Martinez",
+    "position": "CEO",
+    "company": "Global Manufacturing Solutions",
+    "logo": "/images/clients/global-manufacturing.png"
   },
   {
     "id": "2",
-    "quote": "Their cloud migration expertise saved us hundreds of thousands in infrastructure costs while improving our system performance significantly.",
-    "author": "Michael Rodriguez",
+    "quote": "Their cloud migration expertise saved us hundreds of thousands in infrastructure costs while improving our system performance significantly. The team's strategic guidance was invaluable.",
+    "author": "Jennifer Lee",
     "position": "CTO",
-    "company": "FinanceFirst Group",
-    "logo": "/images/clients/financefirst.png"
+    "company": "Financial Services Group",
+    "logo": "/images/clients/financial-services.png"
   },
   {
     "id": "3",
-    "quote": "The managed IT services from NM Global have been a game-changer. We can now focus on patient care while they handle all our IT needs flawlessly.",
-    "author": "Dr. Emily Watson",
+    "quote": "The managed IT services from NM Global have been a game-changer. We can now focus on patient care while they handle all our IT needs flawlessly. Their 24/7 support is exceptional.",
+    "author": "Dr. Michael Chen",
     "position": "Director of IT",
     "company": "Regional Health Network",
-    "logo": "/images/clients/healthnetwork.png"
+    "logo": "/images/clients/health-network.png"
   },
   {
     "id": "4",
-    "quote": "Outstanding partnership. Their team understood our business needs and delivered a solution that exceeded our expectations.",
-    "author": "James Thompson",
+    "quote": "Outstanding partnership. Their team understood our business needs and delivered a solution that exceeded our expectations. The custom software development was delivered on time and under budget.",
+    "author": "Sarah Williams",
     "position": "VP of Operations",
-    "company": "Global Logistics Solutions",
-    "logo": "/images/clients/logistics.png"
+    "company": "Logistics Solutions Inc.",
+    "logo": "/images/clients/logistics-solutions.png"
+  },
+  {
+    "id": "5",
+    "quote": "NM Global's AI and data analytics solutions transformed our business intelligence capabilities. The predictive analytics platform has helped us increase revenue by 15% annually.",
+    "author": "David Thompson",
+    "position": "Chief Analytics Officer",
+    "company": "Retail Dynamics",
+    "logo": "/images/clients/retail-dynamics.png"
+  },
+  {
+    "id": "6",
+    "quote": "Their staff augmentation services were a perfect fit for our project. The ERP consultants provided invaluable expertise and helped us complete our implementation ahead of schedule.",
+    "author": "Amanda Rodriguez",
+    "position": "Project Manager",
+    "company": "TechStart Innovations",
+    "logo": "/images/clients/techstart.png"
   }
 ]
 

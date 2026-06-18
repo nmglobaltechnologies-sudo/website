@@ -19,10 +19,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Services
+              Full-Service Technology Solutions
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
-              Comprehensive IT solutions to accelerate your digital transformation
+              From ERP implementation to AI-powered analytics, we deliver comprehensive technology solutions to accelerate your business transformation
             </p>
           </motion.div>
         </div>
@@ -61,33 +61,33 @@ export default function ServicesPage() {
           {[
             {
               icon: '🏆',
-              title: 'Proven Expertise',
-              description: '15+ years of experience delivering enterprise solutions across multiple industries.',
+              title: 'Proven Track Record',
+              description: '16+ years of successful implementations with 500+ satisfied clients across multiple industries.',
             },
             {
               icon: '✅',
-              title: 'Certified Professionals',
-              description: 'Team of Oracle, AWS, and Microsoft certified experts at your service.',
+              title: 'Industry Experts',
+              description: 'Team of certified Oracle, SAP, AWS, Azure, and Microsoft experts with decades of combined experience.',
             },
             {
               icon: '🌟',
-              title: 'Client-Centric Approach',
-              description: '98% client satisfaction rate with long-term partnership focus.',
+              title: 'End-to-End Solutions',
+              description: 'Comprehensive services from ERP implementation to AI-powered analytics and managed IT support.',
             },
             {
               icon: '💰',
               title: 'Cost Optimization',
-              description: 'Average 30-40% reduction in IT costs while improving performance.',
+              description: 'Average 30-40% reduction in IT costs while improving performance and scalability.',
             },
             {
               icon: '⚡',
               title: 'Rapid Deployment',
-              description: 'Agile methodologies ensuring faster time-to-value.',
+              description: 'Agile methodologies ensuring faster time-to-value with minimal disruption.',
             },
             {
               icon: '🔒',
               title: 'Security First',
-              description: 'Enterprise-grade security and compliance in every solution.',
+              description: 'Enterprise-grade security and compliance in every solution we deliver.',
             },
           ].map((item, index) => (
             <motion.div

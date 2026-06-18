@@ -3,16 +3,19 @@
     "id": "erp-solutions",
     "title": "ERP Solutions",
     "slug": "erp-solutions",
-    "shortDescription": "Comprehensive ERP implementation, customization, and support for Oracle, NetSuite, and leading platforms.",
+    "shortDescription": "Enterprise resource planning solutions including JD Edwards, SAP, Oracle ERP, and Microsoft Dynamics 365 implementation and support.",
     "icon": "database",
     "features": [
-      "Oracle NetSuite Implementation",
+      "JD Edwards EnterpriseOne Implementation",
+      "SAP S/4HANA & Business One Solutions",
+      "Oracle ERP Implementation & Support",
+      "Microsoft Dynamics 365 Deployment",
       "ERP Customization & Integration",
       "Business Process Optimization",
       "Legacy System Migration",
-      "Ongoing Support & Maintenance"
+      "ERP Implementation & Support"
     ],
-    "longDescription": "Transform your business operations with our expert ERP solutions. We specialize in implementing and customizing Oracle NetSuite and other leading ERP platforms to streamline your processes, improve data visibility, and drive operational efficiency.",
+    "longDescription": "Transform your business operations with comprehensive ERP solutions. We specialize in implementing and customizing leading ERP platforms including JD Edwards, SAP, Oracle, and Microsoft Dynamics 365 to streamline your processes, improve data visibility, and drive operational efficiency.",
     "benefits": [
       "Reduce operational costs by up to 40%",
       "Improve data accuracy and real-time visibility",
@@ -21,23 +24,54 @@
     ],
     "caseStudy": {
       "title": "Manufacturing Company Increases Efficiency by 35%",
-      "description": "A mid-sized manufacturing firm reduced order processing time from 48 hours to 6 hours after implementing our customized NetSuite solution."
+      "description": "A mid-sized manufacturing firm reduced order processing time from 48 hours to 6 hours after implementing our customized ERP solution."
     }
   },
   {
-    "id": "cloud-services",
-    "title": "Cloud Services",
-    "slug": "cloud-services",
-    "shortDescription": "Cloud migration, architecture design, and management services for AWS, Azure, and Google Cloud.",
+    "id": "software-development",
+    "title": "Software Development",
+    "slug": "software-development",
+    "shortDescription": "Custom web applications, mobile applications, SaaS products, enterprise portals, and CRM solutions.",
     "icon": "cloud",
     "features": [
-      "Cloud Migration Strategy & Execution",
-      "Multi-Cloud Architecture Design",
-      "Cloud Security & Compliance",
-      "Cost Optimization",
-      "DevOps & CI/CD Implementation"
+      "Web Application Development",
+      "Mobile Application Development",
+      "SaaS Product Development",
+      "Enterprise Portal Solutions",
+      "CRM Solutions",
+      "Custom Software Engineering",
+      "API Development",
+      "Microservices Architecture"
     ],
-    "longDescription": "Accelerate your digital transformation with our cloud services. We help businesses migrate to the cloud, optimize cloud infrastructure, and implement best practices for security, scalability, and cost efficiency.",
+    "longDescription": "Build innovative software solutions that drive business growth. We develop custom web applications, mobile apps, SaaS platforms, enterprise portals, and CRM systems that are scalable, secure, and user-friendly.",
+    "benefits": [
+      "Accelerate time-to-market with rapid development",
+      "Scalable solutions that grow with your business",
+      "Improved customer engagement and satisfaction",
+      "Streamlined business processes through automation"
+    ],
+    "caseStudy": {
+      "title": "Retail Company Boosts Online Sales by 60%",
+      "description": "Our custom e-commerce platform increased online sales by 60% and reduced cart abandonment by 35%."
+    }
+  },
+  {
+    "id": "cloud-infrastructure",
+    "title": "Cloud & Infrastructure",
+    "slug": "cloud-infrastructure",
+    "shortDescription": "AWS, Microsoft Azure, Oracle Cloud services, cloud migration, and DevOps implementation.",
+    "icon": "server",
+    "features": [
+      "AWS Cloud Architecture",
+      "Microsoft Azure Solutions",
+      "Oracle Cloud Services",
+      "Cloud Migration Strategy & Execution",
+      "DevOps & CI/CD Implementation",
+      "Infrastructure as Code",
+      "Cloud Security & Compliance",
+      "Cost Optimization"
+    ],
+    "longDescription": "Modernize your IT infrastructure with comprehensive cloud solutions. We provide expertise in AWS, Azure, and Oracle Cloud, helping businesses migrate to the cloud, optimize infrastructure, and implement best practices for security, scalability, and cost efficiency.",
     "benefits": [
       "Reduce infrastructure costs by 30-50%",
       "Improve application performance and scalability",
@@ -50,9 +84,37 @@
     }
   },
   {
-    "id": "managed-it-services",
-    "title": "Managed IT Services",
-    "slug": "managed-it-services",
+    "id": "data-ai",
+    "title": "Data & AI Solutions",
+    "slug": "data-ai",
+    "shortDescription": "Artificial intelligence solutions, machine learning, business intelligence, data warehousing, and reporting dashboards.",
+    "icon": "database",
+    "features": [
+      "Artificial Intelligence Solutions",
+      "Machine Learning Implementation",
+      "Business Intelligence & Analytics",
+      "Data Warehousing",
+      "Reporting Dashboards",
+      "Predictive Analytics",
+      "Natural Language Processing",
+      "Computer Vision"
+    ],
+    "longDescription": "Leverage the power of data and artificial intelligence to make informed business decisions. We provide comprehensive AI and data solutions including machine learning, business intelligence, data warehousing, and advanced analytics.",
+    "benefits": [
+      "Make data-driven decisions with real-time insights",
+      "Automate repetitive tasks with AI and ML",
+      "Improve forecasting accuracy and planning",
+      "Unlock new revenue opportunities"
+    ],
+    "caseStudy": {
+      "title": "Retail Chain Optimizes Inventory by 25%",
+      "description": "Our AI-powered inventory management system reduced stockouts by 40% and increased inventory turnover by 25%."
+    }
+  },
+  {
+    "id": "managed-services",
+    "title": "Managed Services",
+    "slug": "managed-services",
     "shortDescription": "Comprehensive IT infrastructure management, 24/7 support, and proactive monitoring.",
     "icon": "server",
     "features": [
@@ -60,6 +122,9 @@
       "Help Desk & Technical Support",
       "Network Management & Security",
       "Backup & Disaster Recovery",
+      "ERP Managed Services",
+      "Application Support",
+      "Infrastructure Support",
       "IT Strategy & Consulting"
     ],
     "longDescription": "Focus on your core business while we manage your IT infrastructure. Our managed services provide proactive monitoring, rapid issue resolution, and strategic guidance to keep your systems running smoothly.",
@@ -72,6 +137,34 @@
     "caseStudy": {
       "title": "Healthcare Provider Achieves 99.99% Uptime",
       "description": "Our managed services helped a healthcare network eliminate downtime and improve patient care systems reliability."
+    }
+  },
+  {
+    "id": "staff-augmentation",
+    "title": "Staff Augmentation",
+    "slug": "staff-augmentation",
+    "shortDescription": "ERP consultants, developers, project managers, and QA engineers to scale your team.",
+    "icon": "cloud",
+    "features": [
+      "ERP Consultants",
+      "Software Developers",
+      "Project Managers",
+      "QA Engineers",
+      "DevOps Engineers",
+      "Data Scientists",
+      "UI/UX Designers",
+      "Technical Architects"
+    ],
+    "longDescription": "Scale your team with our expert consultants and developers. We provide specialized talent including ERP consultants, software developers, project managers, and QA engineers to help you meet your business objectives efficiently.",
+    "benefits": [
+      "Access to specialized expertise without full-time commitment",
+      "Faster project delivery with experienced professionals",
+      "Flexible scaling to match project needs",
+      "Reduced recruitment time and costs"
+    ],
+    "caseStudy": {
+      "title": "Startup Accelerates Development Timeline",
+      "description": "Our staff augmentation services helped a startup reduce their development timeline by 40% while maintaining quality standards."
     }
   }
 ]

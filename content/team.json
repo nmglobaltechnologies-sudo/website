@@ -2,8 +2,8 @@
   {
     "id": "1",
     "name": "Naveen Mahajan",
-    "position": "CEO & Founder",
-    "bio": "With over 20 years in enterprise IT, Naveen leads NM Global's vision for digital transformation and client success.",
+    "position": "CEO & Co-Founder",
+    "bio": "With over 25 years in enterprise IT, Naveen brings deep expertise in ERP implementations and digital transformation, leading NM Global's vision for comprehensive technology solutions.",
     "image": "/images/team/naveen-mahajan.jpg",
     "linkedin": "https://linkedin.com/in/naveen-mahajan"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "name": "Priya Sharma",
     "position": "Chief Technology Officer",
-    "bio": "Priya oversees technology strategy and drives innovation across our cloud and ERP solutions portfolio.",
+    "bio": "Priya oversees technology strategy and drives innovation across our cloud and ERP solutions portfolio. With 20+ years in enterprise software, she leads our technical excellence.",
     "image": "/images/team/priya-sharma.jpg",
     "linkedin": "https://linkedin.com/in/priya-sharma"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "David Anderson",
     "position": "VP of Cloud Services",
-    "bio": "David brings 15+ years of cloud architecture experience, leading our cloud transformation initiatives.",
+    "bio": "David brings 20+ years of cloud architecture experience, leading our cloud transformation initiatives and guiding clients through digital modernization.",
     "image": "/images/team/david-anderson.jpg",
     "linkedin": "https://linkedin.com/in/david-anderson"
   },
@@ -27,9 +27,41 @@
     "id": "4",
     "name": "Rajesh Kumar",
     "position": "Director of ERP Solutions",
-    "bio": "Rajesh specializes in Oracle NetSuite implementations with a track record of 100+ successful projects.",
+    "bio": "Rajesh specializes in Oracle NetSuite and JD Edwards implementations with a track record of 200+ successful ERP projects across multiple industries.",
     "image": "/images/team/rajesh-kumar.jpg",
     "linkedin": "https://linkedin.com/in/rajesh-kumar"
+  },
+  {
+    "id": "5",
+    "name": "Michael Chen",
+    "position": "Senior SAP Consultant",
+    "bio": "Michael leads our SAP practice with 18 years of experience implementing S/4HANA and Business One solutions for enterprise clients.",
+    "image": "/images/team/michael-chen.jpg",
+    "linkedin": "https://linkedin.com/in/michael-chen"
+  },
+  {
+    "id": "6",
+    "name": "Sarah Johnson",
+    "position": "Lead Cloud Architect",
+    "bio": "Sarah designs and implements cloud solutions for AWS, Azure, and Oracle Cloud, specializing in multi-cloud strategies and DevOps.",
+    "image": "/images/team/sarah-johnson.jpg",
+    "linkedin": "https://linkedin.com/in/sarah-johnson"
+  },
+  {
+    "id": "7",
+    "name": "James Wilson",
+    "position": "Director of Software Development",
+    "bio": "James leads our software development team, bringing 15+ years of experience in web applications, mobile apps, and SaaS platforms.",
+    "image": "/images/team/james-wilson.jpg",
+    "linkedin": "https://linkedin.com/in/james-wilson"
+  },
+  {
+    "id": "8",
+    "name": "Lisa Martinez",
+    "position": "AI & Data Science Lead",
+    "bio": "Lisa drives our AI and data science initiatives, specializing in machine learning, business intelligence, and predictive analytics.",
+    "image": "/images/team/lisa-martinez.jpg",
+    "linkedin": "https://linkedin.com/in/lisa-martinez"
   }
 ]
 

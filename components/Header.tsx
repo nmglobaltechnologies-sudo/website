@@ -32,7 +32,6 @@ export const Header: React.FC = () => {
       ]
     },
     { href: '/industries', label: 'Industries' },
-    { href: '/resources', label: 'Resources' },
     { href: '/contact', label: 'Contact' },
   ];
 

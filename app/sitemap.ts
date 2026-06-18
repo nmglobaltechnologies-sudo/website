@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/cloud-services',
     '/services/managed-it-services',
     '/industries',
-    '/resources',
     '/contact',
     '/privacy-policy',
     '/terms',
@@ -24,19 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : route === '/contact' ? 0.9 : 0.8,
   }));
 
-  // Add blog posts
-  const blogPosts = [
-    'cloud-migration-best-practices-2025',
-    'erp-implementation-success-factors',
-    'managed-it-services-vs-in-house-team',
-    'digital-transformation-roadmap-2025',
-  ].map((slug) => ({
-    url: `${baseUrl}/resources/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  return [...staticPages, ...blogPosts];
+  return staticPages;
 }
 
