@@ -1,31 +1,20 @@
-import type { Metadata } from "next";
-import { Poppins, Open_Sans } from "next/font/google";
-import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import type { Metadata } from "next"
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  display: "swap",
-});
+import "./globals.css"
+import { Footer } from "@/components/Footer"
+import { Header } from "@/components/Header"
+import { ThemeProvider } from "@/components/ThemeProvider"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 export const metadata: Metadata = {
-  title: "NM Global Technologies | ERP, Cloud & Managed IT Services",
-  description: "Empowering Digital Enterprises with Smart IT Solutions. Leading provider of ERP, Cloud, and Managed IT services for global businesses.",
+  title: "NM Global Technologies | Enterprise Transformation",
+  description:
+    "ERP consulting, custom software, cloud-native platforms, AI automation, integrations, and managed services for enterprise teams.",
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',
   },
-};
+}
 
 export default function RootLayout({
   children,
@@ -33,16 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} ${openSans.variable} antialiased`}
-      >
-        <Header />
-        <main className="pt-24 md:pt-28">
-          {children}
-        </main>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">
+        <ThemeProvider>
+          <TooltipProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

@@ -1,160 +1,130 @@
-'use client';
+"use client"
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Button } from './Button';
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { ArrowRightIcon, MenuIcon } from "lucide-react"
 
-export const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+import { ThemeToggle } from "@/components/ThemeToggle"
+import { Brand } from "@/components/Brand"
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { cn } from "@/lib/utils"
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/industries", label: "Industries" },
+  { href: "/technologies", label: "Technologies" },
+  { href: "/contact", label: "Contact" },
+]
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { 
-      href: '/services', 
-      label: 'Services',
-      submenu: [
-        { href: '/services/erp-solutions', label: 'ERP Solutions' },
-        { href: '/services/cloud-services', label: 'Cloud Services' },
-        { href: '/services/managed-it-services', label: 'Managed IT Services' },
-      ]
-    },
-    { href: '/industries', label: 'Industries' },
-    { href: '/contact', label: 'Contact' },
-  ];
+export function Header() {
+  const pathname = usePathname()
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
-      }`}
-    >
-      <nav className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image 
-              src="/images/logo.png" 
-              alt="NM Global Technologies" 
-              width={400} 
-              height={115}
-              priority
-              className="h-20 md:h-[100px] w-auto"
-            />
-          </Link>
+    <header className="sticky top-0 z-40 border-b bg-background/88 backdrop-blur-xl">
+      <div className="mx-auto flex h-18 max-w-7xl items-center gap-4 px-5 md:px-8">
+        <Link href="/" className="shrink-0" aria-label="NM Global home">
+          <Brand compact />
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <div key={link.href} className="relative group">
-                <Link
-                  href={link.href}
-                  className={`text-sm font-semibold transition-colors hover:text-accent ${
-                    pathname === link.href ? 'text-accent' : 'text-primary'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-                {link.submenu && (
-                  <div className="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2">
-                    {link.submenu.map((sublink) => (
-                      <Link
-                        key={sublink.href}
-                        href={sublink.href}
-                        className="block px-4 py-2 text-sm text-primary hover:bg-sky hover:text-accent transition-colors"
-                      >
-                        {sublink.label}
-                      </Link>
-                    ))}
-                  </div>
+        <nav
+          aria-label="Primary navigation"
+          className="ml-auto hidden items-center gap-1 lg:flex"
+        >
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href)
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground",
+                  isActive && "bg-muted text-foreground"
                 )}
-              </div>
-            ))}
-          </div>
+              >
+                {link.label}
+              </Link>
+            )
+          })}
+        </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button href="/contact" variant="primary" size="sm">
-              Get Consultation
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-primary p-2"
-            aria-label="Toggle menu"
+        <div className="ml-auto flex items-center gap-2 lg:ml-2">
+          <ThemeToggle />
+          <Button
+            render={<Link href="/contact" />}
+            nativeButton={false}
+            className="hidden md:inline-flex"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            Start a conversation
+            <ArrowRightIcon data-icon="inline-end" />
+          </Button>
+
+          <Sheet>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="lg:hidden"
+                  aria-label="Open navigation"
+                />
+              }
             >
-              {isMobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t">
-            {navLinks.map((link) => (
-              <div key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`block py-3 text-sm font-semibold ${
-                    pathname === link.href ? 'text-accent' : 'text-primary'
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+              <MenuIcon />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>NM Global Technologies</SheetTitle>
+                <SheetDescription>
+                  Enterprise software and digital transformation services.
+                </SheetDescription>
+              </SheetHeader>
+              <nav
+                aria-label="Mobile navigation"
+                className="flex flex-col gap-1 px-4"
+              >
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "rounded-lg px-3 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+                      pathname === link.href && "bg-muted text-foreground"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+              <div className="mt-auto p-4">
+                <Button
+                  render={<Link href="/contact" />}
+                  nativeButton={false}
+                  size="lg"
+                  className="w-full"
                 >
-                  {link.label}
-                </Link>
-                {link.submenu && (
-                  <div className="pl-4 space-y-2">
-                    {link.submenu.map((sublink) => (
-                      <Link
-                        key={sublink.href}
-                        href={sublink.href}
-                        className="block py-2 text-sm text-neutral hover:text-accent"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {sublink.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                  Start a conversation
+                  <ArrowRightIcon data-icon="inline-end" />
+                </Button>
               </div>
-            ))}
-            <div className="mt-4">
-              <Button href="/contact" variant="primary" size="sm" className="w-full">
-                Get Consultation
-              </Button>
-            </div>
-          </div>
-        )}
-      </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
     </header>
-  );
-};
-
+  )
+}

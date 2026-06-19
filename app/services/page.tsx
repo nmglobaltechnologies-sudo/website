@@ -1,157 +1,219 @@
-'use client';
+"use client"
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Section, SectionHeader } from '@/components/Section';
-import { ServiceCard } from '@/components/Card';
-import { CTABanner } from '@/components/CTABanner';
-import servicesData from '@/content/services.json';
+import Link from "next/link"
+import {
+  ArrowRightIcon,
+  BlocksIcon,
+  BotIcon,
+  BoxesIcon,
+  CloudCogIcon,
+  CodeXmlIcon,
+  DatabaseZapIcon,
+  NetworkIcon,
+} from "lucide-react"
+
+import { PageHero } from "@/components/PageHero"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import { servicePlatforms } from "@/content/capabilities"
+
+const platformIcons = {
+  "jd-edwards": DatabaseZapIcon,
+  "oracle-fusion": CloudCogIcon,
+  netsuite: BoxesIcon,
+  sap: BlocksIcon,
+  "dynamics-365": NetworkIcon,
+  "custom-software": CodeXmlIcon,
+  "ai-automation": BotIcon,
+}
+
+const categories = [
+  {
+    value: "erp",
+    label: "Enterprise platforms",
+    description:
+      "ERP consulting, implementation, modernization, integration, and managed support.",
+  },
+  {
+    value: "development",
+    label: "Software engineering",
+    description:
+      "Custom web, mobile, API, microservice, and cloud-native product delivery.",
+  },
+  {
+    value: "intelligence",
+    label: "AI & automation",
+    description:
+      "AI agents, intelligent workflows, business intelligence, and generative AI.",
+  },
+]
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-white py-20">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+      <PageHero
+        title="A complete technology service catalog, organized around your enterprise."
+        description="From core ERP platforms to custom engineering and intelligent automation, NM Global connects strategy, implementation, integration, and support."
+      >
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button
+            render={<Link href="/contact" />}
+            nativeButton={false}
+            size="lg"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Full-Service Technology Solutions
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
-              From ERP implementation to AI-powered analytics, we deliver comprehensive technology solutions to accelerate your business transformation
-            </p>
-          </motion.div>
+            Discuss your requirements
+            <ArrowRightIcon data-icon="inline-end" />
+          </Button>
+          <Button
+            render={<Link href="/technologies" />}
+            nativeButton={false}
+            variant="outline"
+            size="lg"
+          >
+            View technology stack
+          </Button>
         </div>
+      </PageHero>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <Tabs defaultValue="erp">
+          <TabsList
+            variant="line"
+            className="w-full justify-start overflow-x-auto border-b pb-3"
+          >
+            {categories.map((category) => (
+              <TabsTrigger key={category.value} value={category.value}>
+                {category.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {categories.map((category) => {
+            const platforms = servicePlatforms.filter(
+              (platform) => platform.category === category.value
+            )
+
+            return (
+              <TabsContent
+                key={category.value}
+                value={category.value}
+                className="pt-10"
+              >
+                <div className="mb-10 max-w-3xl">
+                  <h2 className="text-3xl font-semibold tracking-tight">
+                    {category.label}
+                  </h2>
+                  <p className="mt-3 text-base leading-7 text-muted-foreground">
+                    {category.description}
+                  </p>
+                </div>
+
+                <div className="grid gap-6 lg:grid-cols-2">
+                  {platforms.map((platform) => {
+                    const Icon =
+                      platformIcons[
+                        platform.id as keyof typeof platformIcons
+                      ]
+
+                    return (
+                      <Card
+                        key={platform.id}
+                        id={platform.id}
+                        className="scroll-mt-28 rounded-2xl"
+                      >
+                        <CardHeader className="p-6 md:p-7">
+                          <div className="mb-4 flex items-start justify-between gap-4">
+                            <span className="flex size-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+                              <Icon className="size-5" />
+                            </span>
+                            <Badge variant="outline">
+                              {platform.sections.length} service areas
+                            </Badge>
+                          </div>
+                          <CardTitle className="text-2xl">
+                            {platform.title}
+                          </CardTitle>
+                          <CardDescription className="text-base leading-7">
+                            {platform.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="px-6 pb-7 md:px-7">
+                          <Accordion>
+                            {platform.sections.map((section) => (
+                              <AccordionItem
+                                key={section.title}
+                                value={`${platform.id}-${section.title}`}
+                              >
+                                <AccordionTrigger>
+                                  {section.title}
+                                </AccordionTrigger>
+                                <AccordionContent>
+                                  <ul className="grid gap-2 pb-2 sm:grid-cols-2">
+                                    {section.items.map((item) => (
+                                      <li
+                                        key={item}
+                                        className="flex items-start gap-2 text-muted-foreground"
+                                      >
+                                        <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+                                        {item}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </AccordionContent>
+                              </AccordionItem>
+                            ))}
+                          </Accordion>
+                        </CardContent>
+                      </Card>
+                    )
+                  })}
+                </div>
+              </TabsContent>
+            )
+          })}
+        </Tabs>
       </section>
 
-      {/* Services Grid */}
-      <Section>
-        <SectionHeader
-          title="What We Offer"
-          subtitle="End-to-end technology services tailored to your business needs"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {servicesData.map((service) => (
-            <ServiceCard
-              key={service.id}
-              icon={
-                service.icon === 'database' ? '💾' :
-                service.icon === 'cloud' ? '☁️' :
-                service.icon === 'server' ? '🖥️' : '⚡'
-              }
-              title={service.title}
-              description={service.shortDescription}
-              link={`/services/${service.slug}`}
-            />
-          ))}
-        </div>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section background="gray">
-        <SectionHeader
-          title="Why Choose NM Global"
-          subtitle="What sets us apart from other IT service providers"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[
-            {
-              icon: '🏆',
-              title: 'Proven Track Record',
-              description: '16+ years of successful implementations with 500+ satisfied clients across multiple industries.',
-            },
-            {
-              icon: '✅',
-              title: 'Industry Experts',
-              description: 'Team of certified Oracle, SAP, AWS, Azure, and Microsoft experts with decades of combined experience.',
-            },
-            {
-              icon: '🌟',
-              title: 'End-to-End Solutions',
-              description: 'Comprehensive services from ERP implementation to AI-powered analytics and managed IT support.',
-            },
-            {
-              icon: '💰',
-              title: 'Cost Optimization',
-              description: 'Average 30-40% reduction in IT costs while improving performance and scalability.',
-            },
-            {
-              icon: '⚡',
-              title: 'Rapid Deployment',
-              description: 'Agile methodologies ensuring faster time-to-value with minimal disruption.',
-            },
-            {
-              icon: '🔒',
-              title: 'Security First',
-              description: 'Enterprise-grade security and compliance in every solution we deliver.',
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
-            >
-              <div className="text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-              <p className="text-neutral">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Process */}
-      <Section>
-        <SectionHeader
-          title="Our Approach"
-          subtitle="A proven methodology for successful project delivery"
-        />
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {[
-              { step: '01', title: 'Discovery', description: 'Understand your business needs and challenges' },
-              { step: '02', title: 'Strategy', description: 'Design tailored solutions aligned with your goals' },
-              { step: '03', title: 'Implementation', description: 'Deploy with minimal disruption' },
-              { step: '04', title: 'Training', description: 'Empower your team for success' },
-              { step: '05', title: 'Support', description: 'Ongoing optimization and assistance' },
-            ].map((phase, index) => (
-              <motion.div
-                key={phase.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg">
-                  {phase.step}
-                </div>
-                <h4 className="font-bold text-primary mb-2">{phase.title}</h4>
-                <p className="text-sm text-neutral">{phase.description}</p>
-              </motion.div>
-            ))}
+      <section className="border-y bg-muted/40">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-16 md:px-8 lg:grid-cols-[1fr_auto]">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Need a cross-platform roadmap?
+            </h2>
+            <p className="mt-3 max-w-2xl leading-7 text-muted-foreground">
+              We can help sequence ERP modernization, integrations, custom
+              applications, cloud services, and support as one program.
+            </p>
           </div>
+          <Button
+            render={<Link href="/contact" />}
+            nativeButton={false}
+            size="lg"
+          >
+            Start a conversation
+            <ArrowRightIcon data-icon="inline-end" />
+          </Button>
         </div>
-      </Section>
-
-      {/* CTA */}
-      <Section background="gray">
-        <CTABanner
-          title="Ready to Transform Your IT Infrastructure?"
-          description="Let's discuss your specific needs and create a customized solution"
-          primaryButtonText="Schedule Consultation"
-          primaryButtonLink="/contact"
-          secondaryButtonText="Learn About Us"
-          secondaryButtonLink="/about"
-        />
-      </Section>
+      </section>
     </>
-  );
+  )
 }
-

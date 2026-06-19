@@ -1,124 +1,130 @@
-'use client';
+import {
+  ClockIcon,
+  MailIcon,
+  MapPinIcon,
+  MessageSquareTextIcon,
+} from "lucide-react"
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Section, SectionHeader } from '@/components/Section';
-import { Card } from '@/components/Card';
+import { PageHero } from "@/components/PageHero"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+const contactMethods = [
+  {
+    icon: MailIcon,
+    title: "Email",
+    description: "Send your requirements or request a consultation.",
+    content: (
+      <a
+        href="mailto:info@nmglobal.com"
+        className="font-medium text-primary hover:underline"
+      >
+        info@nmglobal.com
+      </a>
+    ),
+  },
+  {
+    icon: MapPinIcon,
+    title: "Office",
+    description: "NM Global Technologies",
+    content: (
+      <address className="not-italic text-muted-foreground">
+        9104 Farmer Dr
+        <br />
+        Fort Worth, TX 76244
+      </address>
+    ),
+  },
+  {
+    icon: ClockIcon,
+    title: "Business hours",
+    description: "Central Time",
+    content: (
+      <p className="text-muted-foreground">Monday–Friday, 9:00 AM–6:00 PM</p>
+    ),
+  },
+]
 
 export default function ContactPage() {
-
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-accent text-white py-20">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
-              Let&apos;s discuss how we can help transform your business
+      <PageHero
+        title="Let’s start with the business objective."
+        description="Tell us about the platform, process, integration, application, or operational challenge you are working through."
+      />
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Connect with NM Global
+            </h2>
+            <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
+              Share the current environment and the outcome you need. We will
+              route the conversation to the right platform, engineering, or
+              support specialist.
             </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Contact Information Cards */}
-      <Section>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Card className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent text-white flex items-center justify-center text-2xl">
-              📍
-            </div>
-            <h3 className="font-bold text-primary mb-2">Visit Us</h3>
-            <p className="text-neutral text-sm">
-              1234 Business Park Dr.<br />
-              Suite 100<br />
-              City, ST 12345
-            </p>
-          </Card>
-
-          <Card className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent text-white flex items-center justify-center text-2xl">
-              📧
-            </div>
-            <h3 className="font-bold text-primary mb-2">Email Us</h3>
-            <a href="mailto:info@nmglobal.com" className="text-accent hover:text-primary transition-colors">
-              info@nmglobal.com
-            </a>
-            <br />
-            <a href="mailto:sales@nmglobal.com" className="text-accent hover:text-primary transition-colors">
-              sales@nmglobal.com
-            </a>
-          </Card>
-
-          <Card className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-accent text-white flex items-center justify-center text-2xl">
-              📞
-            </div>
-            <h3 className="font-bold text-primary mb-2">Call Us</h3>
-            <a href="tel:+1234567890" className="text-accent hover:text-primary transition-colors">
-              +1 (234) 567-8900
-            </a>
-            <br />
-            <a href="https://wa.me/1234567890" className="text-accent hover:text-primary transition-colors">
-              WhatsApp: +1 (234) 567-8900
-            </a>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section>
-        <SectionHeader
-          title="Why Work With Us?"
-          subtitle="Startup agility meets enterprise expertise"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="text-center">
-            <div className="text-5xl mb-4">🚀</div>
-            <h4 className="font-bold text-primary mb-2">Fast Response</h4>
-            <p className="text-sm text-neutral">Quick turnaround times with direct access to decision-makers</p>
-          </Card>
-          <Card className="text-center">
-            <div className="text-5xl mb-4">💡</div>
-            <h4 className="font-bold text-primary mb-2">Innovative Solutions</h4>
-            <p className="text-sm text-neutral">Fresh perspectives and cutting-edge technology approaches</p>
-          </Card>
-          <Card className="text-center">
-            <div className="text-5xl mb-4">🤝</div>
-            <h4 className="font-bold text-primary mb-2">Personal Attention</h4>
-            <p className="text-sm text-neutral">Every client matters - you're not just a number to us</p>
-          </Card>
-        </div>
-      </Section>
-
-      {/* Business Hours */}
-      <Section background="primary">
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
-          <p className="text-xl mb-6 opacity-90">
-            Reach out via email or phone and we'll get back to you promptly
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-bold mb-2">Email</h4>
-              <p className="opacity-90">info@nmglobal.com</p>
-              <p className="opacity-90">sales@nmglobal.com</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-2">Phone</h4>
-              <p className="opacity-90">+1 (234) 567-8900</p>
-              <p className="opacity-90">Available Monday - Friday, 9AM-6PM EST</p>
+            <div className="mt-8 grid gap-4">
+              {contactMethods.map((method) => (
+                <Card key={method.title}>
+                  <CardHeader className="p-5">
+                    <div className="flex gap-4">
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+                        <method.icon className="size-5" />
+                      </span>
+                      <div>
+                        <CardTitle>{method.title}</CardTitle>
+                        <CardDescription className="mt-1">
+                          {method.description}
+                        </CardDescription>
+                        <div className="mt-3 text-sm">{method.content}</div>
+                      </div>
+                    </div>
+                  </CardHeader>
+                </Card>
+              ))}
             </div>
           </div>
-        </div>
-      </Section>
-    </>
-  );
-}
 
+          <Card className="rounded-3xl bg-primary text-primary-foreground">
+            <CardHeader className="p-7 md:p-10">
+              <span className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-primary-foreground/12">
+                <MessageSquareTextIcon className="size-6" />
+              </span>
+              <CardTitle className="text-3xl">
+                A useful first message includes:
+              </CardTitle>
+              <CardDescription className="text-base leading-7 text-primary-foreground/70">
+                This context helps us prepare the right specialists before the
+                first discussion.
+              </CardDescription>
+            </CardHeader>
+            <div className="grid gap-4 px-7 pb-9 md:px-10">
+              {[
+                "The business process or system in scope",
+                "Your current ERP, cloud, or application environment",
+                "Important integrations or data dependencies",
+                "The target timeline and desired outcome",
+              ].map((item, index) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-4 rounded-2xl bg-primary-foreground/8 p-4"
+                >
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary-foreground text-xs font-semibold text-primary">
+                    {index + 1}
+                  </span>
+                  <p className="pt-0.5 text-sm leading-6">{item}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
+    </>
+  )
+}

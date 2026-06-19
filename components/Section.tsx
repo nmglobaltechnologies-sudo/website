@@ -14,9 +14,9 @@ export const Section: React.FC<SectionProps> = ({
   id 
 }) => {
   const bgStyles = {
-    white: 'bg-white',
-    gray: 'bg-gray-50',
-    primary: 'bg-primary text-white',
+    white: 'bg-background',
+    gray: 'bg-muted/40',
+    primary: 'bg-primary text-primary-foreground',
   };
   
   return (
@@ -46,9 +46,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <div className={`mb-12 ${centered ? 'text-center' : ''} ${className}`}>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">{title}</h2>
       {subtitle && (
-        <p className="text-lg text-neutral max-w-3xl mx-auto">{subtitle}</p>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{subtitle}</p>
       )}
     </div>
   );
