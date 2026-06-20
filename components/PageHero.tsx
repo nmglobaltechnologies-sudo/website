@@ -19,9 +19,8 @@ export function PageHero({ title, description, children }: PageHeroProps) {
             {description}
           </p>
         </div>
-        {children}
+        {children ? <div className="flex items-start">{children}</div> : null}
       </div>
     </section>
   )
 }
-
