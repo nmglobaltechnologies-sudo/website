@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import {
   ArrowRightIcon,
@@ -15,6 +16,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+
+export const metadata: Metadata = {
+  title: "About | NM Global Technologies",
+  description:
+    "Learn about NM Global Technologies, our mission, vision, values, enterprise expertise, and coordinated delivery model.",
+}
 
 const principles = [
   {
@@ -41,6 +48,33 @@ const principles = [
     description:
       "We apply modern engineering and AI where they simplify work or improve decision-making.",
   },
+]
+
+const expertise = [
+  "JD Edwards",
+  "Oracle Fusion Cloud",
+  "NetSuite",
+  "SAP",
+  "Microsoft Dynamics",
+  "AI Solutions",
+  "Cloud Technologies",
+  "Software Engineering",
+]
+
+const leadershipRoles = [
+  "Founder",
+  "ERP Consultants",
+  "Architects",
+  "Developers",
+  "Project Managers",
+]
+
+const coreValues = [
+  "Excellence",
+  "Innovation",
+  "Integrity",
+  "Customer Success",
+  "Continuous Learning",
 ]
 
 export default function AboutPage() {
@@ -79,6 +113,85 @@ export default function AboutPage() {
             roadmap, implement the right platforms, build what is missing, and
             support the resulting ecosystem.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Card>
+            <CardHeader className="p-7">
+              <CardTitle className="text-2xl">Our mission</CardTitle>
+              <CardDescription className="text-base leading-7">
+                Empowering businesses through ERP, cloud, automation, and
+                digital transformation solutions.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader className="p-7">
+              <CardTitle className="text-2xl">Our vision</CardTitle>
+              <CardDescription className="text-base leading-7">
+                To become a trusted global technology consulting partner
+                delivering measurable business value.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+
+        <div className="mt-10">
+          <h2 className="text-2xl font-semibold tracking-tight">Core values</h2>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {coreValues.map((value) => (
+              <span
+                key={value}
+                className="rounded-xl bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+              >
+                {value}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Enterprise expertise
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Our delivery model brings platform, engineering, cloud, and
+              automation disciplines into one coordinated team.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {expertise.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border bg-card px-3 py-1.5 text-sm text-muted-foreground"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Leadership and delivery roles
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Role categories describe the team structure. Individual
+              biographies will be added only when approved company information
+              is available.
+            </p>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {leadershipRoles.map((role) => (
+                <li
+                  key={role}
+                  className="rounded-xl border bg-card p-4 text-sm font-medium"
+                >
+                  {role}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

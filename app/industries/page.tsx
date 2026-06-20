@@ -1,68 +1,31 @@
+"use client"
+
 import Link from "next/link"
-import {
-  ArrowRightIcon,
-  Building2Icon,
-  FactoryIcon,
-  HeartPulseIcon,
-  PackageIcon,
-  ShoppingBagIcon,
-  TruckIcon,
-} from "lucide-react"
+import { ArrowRightIcon, CheckIcon } from "lucide-react"
 
 import { PageHero } from "@/components/PageHero"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardDescription,
+  CardContent,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-const industries = [
-  {
-    icon: FactoryIcon,
-    title: "Manufacturing",
-    description:
-      "Production, planning, quality, costing, inventory, maintenance, and supply chain systems.",
-  },
-  {
-    icon: Building2Icon,
-    title: "Construction",
-    description:
-      "Project operations, procurement, resource planning, cost control, and field visibility.",
-  },
-  {
-    icon: PackageIcon,
-    title: "Distribution",
-    description:
-      "Warehouse execution, fulfillment, inventory optimization, supplier coordination, and analytics.",
-  },
-  {
-    icon: ShoppingBagIcon,
-    title: "Retail",
-    description:
-      "Commerce integrations, customer experiences, inventory, finance, and operational reporting.",
-  },
-  {
-    icon: HeartPulseIcon,
-    title: "Healthcare",
-    description:
-      "Secure application integration, workforce systems, finance, procurement, and operational support.",
-  },
-  {
-    icon: TruckIcon,
-    title: "Logistics",
-    description:
-      "Transportation, tracking, warehouse automation, route operations, and connected enterprise data.",
-  },
-]
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import { industryProfiles } from "@/content/requirements"
 
 export default function IndustriesPage() {
   return (
     <>
       <PageHero
         title="Enterprise technology grounded in industry operations."
-        description="We combine platform knowledge with an understanding of process, data, integration, and support needs across complex operating environments."
+        description="Explore common challenges, recommended solutions, business benefits, and relevant technologies across seven operating environments."
       >
         <Button
           render={<Link href="/contact" />}
@@ -75,21 +38,77 @@ export default function IndustriesPage() {
       </PageHero>
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
-            <Card key={industry.title}>
-              <CardHeader className="p-6">
-                <span className="mb-4 flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-                  <industry.icon className="size-5" />
-                </span>
-                <CardTitle className="text-xl">{industry.title}</CardTitle>
-                <CardDescription className="text-base leading-7">
-                  {industry.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
+        <Tabs defaultValue={industryProfiles[0].id}>
+          <TabsList
+            variant="line"
+            className="w-full justify-start overflow-x-auto border-b pb-3"
+          >
+            {industryProfiles.map((industry) => (
+              <TabsTrigger key={industry.id} value={industry.id}>
+                {industry.title}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {industryProfiles.map((industry) => (
+            <TabsContent
+              key={industry.id}
+              value={industry.id}
+              className="pt-10"
+            >
+              <div className="max-w-3xl">
+                <h2 className="text-3xl font-semibold tracking-tight">
+                  {industry.title}
+                </h2>
+                <p className="mt-4 text-lg leading-8 text-muted-foreground">
+                  {industry.summary}
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-5 md:grid-cols-2">
+                {[
+                  ["Industry challenges", industry.challenges],
+                  ["Recommended solutions", industry.solutions],
+                  ["Business benefits", industry.benefits],
+                ].map(([title, items]) => (
+                  <Card key={title as string}>
+                    <CardHeader>
+                      <CardTitle className="text-xl">{title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="flex flex-col gap-3">
+                        {(items as string[]).map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-3 text-muted-foreground"
+                          >
+                            <CheckIcon className="mt-0.5 size-4 shrink-0 text-primary" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl">
+                      Relevant technologies
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex flex-wrap gap-2">
+                    {industry.technologies.map((technology) => (
+                      <Badge key={technology} variant="secondary">
+                        {technology}
+                      </Badge>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
       </section>
     </>
   )

@@ -8,7 +8,7 @@ export type ServicePlatform = {
   title: string
   shortTitle: string
   description: string
-  category: "erp" | "development" | "intelligence"
+  category: "erp" | "development" | "cloud" | "intelligence"
   sections: CapabilitySection[]
 }
 
@@ -340,6 +340,52 @@ export const servicePlatforms: ServicePlatform[] = [
     ],
   },
   {
+    id: "cloud-infrastructure",
+    title: "Cloud & Infrastructure",
+    shortTitle: "Cloud",
+    category: "cloud",
+    description:
+      "Cloud strategy, migration, platform engineering, DevOps, and managed infrastructure across major providers.",
+    sections: [
+      {
+        title: "Cloud Platforms",
+        items: [
+          "Amazon Web Services (AWS)",
+          "Microsoft Azure",
+          "Oracle Cloud Infrastructure (OCI)",
+          "Google Cloud Platform",
+        ],
+      },
+      {
+        title: "Cloud Migration",
+        items: [
+          "Readiness Assessment",
+          "Migration Planning",
+          "Application Modernization",
+          "Data Migration",
+        ],
+      },
+      {
+        title: "DevOps & Platform Engineering",
+        items: [
+          "CI/CD Pipelines",
+          "Infrastructure as Code",
+          "Containers & Kubernetes",
+          "Observability",
+        ],
+      },
+      {
+        title: "Managed Infrastructure",
+        items: [
+          "Monitoring",
+          "Environment Management",
+          "Performance Optimization",
+          "Operational Support",
+        ],
+      },
+    ],
+  },
+  {
     id: "ai-automation",
     title: "AI & Automation Solutions",
     shortTitle: "AI & Automation",
@@ -389,6 +435,16 @@ export const servicePlatforms: ServicePlatform[] = [
 
 export const technologyGroups = [
   {
+    title: "ERP Platforms",
+    items: [
+      "JD Edwards EnterpriseOne",
+      "Oracle Fusion Cloud",
+      "Oracle NetSuite",
+      "SAP",
+      "Microsoft Dynamics 365",
+    ],
+  },
+  {
     title: "Frontend",
     items: ["React", "Next.js", "TypeScript", "Angular", "Vue.js"],
   },
@@ -430,4 +486,3 @@ export const technologyGroups = [
     ],
   },
 ]
-

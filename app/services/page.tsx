@@ -43,6 +43,7 @@ const platformIcons = {
   sap: BlocksIcon,
   "dynamics-365": NetworkIcon,
   "custom-software": CodeXmlIcon,
+  "cloud-infrastructure": CloudCogIcon,
   "ai-automation": BotIcon,
 }
 
@@ -58,6 +59,12 @@ const categories = [
     label: "Software engineering",
     description:
       "Custom web, mobile, API, microservice, and cloud-native product delivery.",
+  },
+  {
+    value: "cloud",
+    label: "Cloud & infrastructure",
+    description:
+      "Cloud strategy, migration, DevOps, platform engineering, and managed infrastructure.",
   },
   {
     value: "intelligence",

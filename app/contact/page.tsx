@@ -1,23 +1,36 @@
+import type { Metadata } from "next"
 import {
+  CalendarClockIcon,
   ClockIcon,
   MailIcon,
+  MapIcon,
   MapPinIcon,
-  MessageSquareTextIcon,
+  MessageCircleIcon,
+  Share2Icon,
 } from "lucide-react"
 
+import { ContactForm, NewsletterForm } from "@/components/RequirementForms"
 import { PageHero } from "@/components/PageHero"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 
+export const metadata: Metadata = {
+  title: "Contact | NM Global Technologies",
+  description:
+    "Contact NM Global Technologies about ERP, custom software, cloud, AI automation, integration, or managed services.",
+}
+
 const contactMethods = [
   {
     icon: MailIcon,
     title: "Email",
-    description: "Send your requirements or request a consultation.",
+    description: "Send requirements or request a consultation.",
     content: (
       <a
         href="mailto:info@nmglobal.com"
@@ -44,8 +57,33 @@ const contactMethods = [
     title: "Business hours",
     description: "Central Time",
     content: (
-      <p className="text-muted-foreground">Monday–Friday, 9:00 AM–6:00 PM</p>
+      <p className="text-muted-foreground">
+        Monday-Friday, 9:00 AM-6:00 PM
+      </p>
     ),
+  },
+]
+
+const pendingIntegrations = [
+  {
+    icon: MessageCircleIcon,
+    title: "Phone & WhatsApp",
+    description: "Awaiting an approved company number.",
+  },
+  {
+    icon: CalendarClockIcon,
+    title: "Meeting scheduler",
+    description: "Awaiting an approved Calendly or scheduling URL.",
+  },
+  {
+    icon: MapIcon,
+    title: "Google Maps",
+    description: "Awaiting an approved embed configuration.",
+  },
+  {
+    icon: Share2Icon,
+    title: "Social media",
+    description: "Awaiting verified company profile URLs.",
   },
 ]
 
@@ -58,15 +96,15 @@ export default function ContactPage() {
       />
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight">
               Connect with NM Global
             </h2>
             <p className="mt-4 max-w-xl leading-7 text-muted-foreground">
-              Share the current environment and the outcome you need. We will
-              route the conversation to the right platform, engineering, or
-              support specialist.
+              Share the current environment and desired outcome. We will route
+              the conversation to the right platform, engineering, or support
+              specialist.
             </p>
 
             <div className="mt-8 grid gap-4">
@@ -91,39 +129,71 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Card className="rounded-3xl bg-primary text-primary-foreground">
-            <CardHeader className="p-7 md:p-10">
-              <span className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-primary-foreground/12">
-                <MessageSquareTextIcon className="size-6" />
-              </span>
-              <CardTitle className="text-3xl">
-                A useful first message includes:
-              </CardTitle>
-              <CardDescription className="text-base leading-7 text-primary-foreground/70">
-                This context helps us prepare the right specialists before the
-                first discussion.
+          <Card className="rounded-3xl">
+            <CardHeader className="p-7 md:p-9">
+              <CardTitle className="text-3xl">Tell us what you need</CardTitle>
+              <CardDescription className="text-base leading-7">
+                Fields validate locally. Nothing is transmitted until a secure
+                submission service is configured.
               </CardDescription>
             </CardHeader>
-            <div className="grid gap-4 px-7 pb-9 md:px-10">
-              {[
-                "The business process or system in scope",
-                "Your current ERP, cloud, or application environment",
-                "Important integrations or data dependencies",
-                "The target timeline and desired outcome",
-              ].map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-4 rounded-2xl bg-primary-foreground/8 p-4"
-                >
-                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary-foreground text-xs font-semibold text-primary">
-                    {index + 1}
-                  </span>
-                  <p className="pt-0.5 text-sm leading-6">{item}</p>
-                </div>
-              ))}
-            </div>
+            <CardContent className="px-7 pb-9 md:px-9">
+              <ContactForm />
+            </CardContent>
           </Card>
         </div>
+      </section>
+
+      <section className="border-y bg-muted/40">
+        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-semibold tracking-tight">
+              Additional contact options
+            </h2>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              These interfaces are ready for configuration but are not linked
+              to unverified destinations.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {pendingIntegrations.map((item) => (
+              <Card key={item.title}>
+                <CardHeader>
+                  <item.icon className="mb-3 size-5 text-primary" />
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription className="leading-6">
+                    {item.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          <Alert className="mt-8">
+            <MapIcon />
+            <AlertTitle>Map and booking embeds are intentionally inactive</AlertTitle>
+            <AlertDescription>
+              Activating them requires verified URLs and a privacy review
+              because third-party embeds may store cookies or process visitor
+              data.
+            </AlertDescription>
+          </Alert>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-5 py-20 md:px-8">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Enterprise insights</CardTitle>
+            <CardDescription>
+              Newsletter collection is prepared but remains disconnected until
+              an approved email platform is configured.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <NewsletterForm />
+          </CardContent>
+        </Card>
       </section>
     </>
   )

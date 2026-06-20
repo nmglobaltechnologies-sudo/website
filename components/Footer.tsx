@@ -3,19 +3,13 @@ import { ArrowUpRightIcon, MapPinIcon } from "lucide-react"
 
 import { Separator } from "@/components/ui/separator"
 import { Brand } from "@/components/Brand"
-
-const companyLinks = [
-  { href: "/about", label: "About" },
-  { href: "/solutions", label: "Business solutions" },
-  { href: "/industries", label: "Industries" },
-  { href: "/contact", label: "Contact" },
-]
+import { footerCompanyLinks, footerResourceLinks } from "@/content/site"
 
 const capabilityLinks = [
   { href: "/services#jd-edwards", label: "JD Edwards" },
   { href: "/services#oracle-fusion", label: "Oracle Fusion Cloud" },
   { href: "/services#sap", label: "SAP" },
-  { href: "/services#custom-software", label: "Custom software" },
+  { href: "/services#dynamics-365", label: "Microsoft Dynamics" },
   { href: "/services#ai-automation", label: "AI & automation" },
 ]
 
@@ -23,7 +17,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-muted/30">
       <div className="mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-18">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.9fr_0.8fr_1fr]">
           <div className="max-w-sm">
             <Brand />
             <p className="mt-5 text-sm leading-6 text-muted-foreground">
@@ -36,7 +30,7 @@ export function Footer() {
           <div>
             <h2 className="text-sm font-semibold">Company</h2>
             <ul className="mt-4 flex flex-col gap-3">
-              {companyLinks.map((link) => (
+              {footerCompanyLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -53,6 +47,22 @@ export function Footer() {
             <h2 className="text-sm font-semibold">Capabilities</h2>
             <ul className="mt-4 flex flex-col gap-3">
               {capabilityLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-semibold">Resources</h2>
+            <ul className="mt-4 flex flex-col gap-3">
+              {footerResourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -100,6 +110,9 @@ export function Footer() {
             </Link>
             <Link href="/terms" className="hover:text-foreground">
               Terms
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-foreground">
+              Cookies
             </Link>
           </div>
         </div>

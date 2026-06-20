@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import {
   ArrowRightIcon,
@@ -19,6 +20,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+export const metadata: Metadata = {
+  title: "Business Solutions | NM Global Technologies",
+  description:
+    "Finance, procurement, manufacturing, inventory, supply chain, and human resources solutions.",
+}
+
 const solutions = [
   {
     icon: HandCoinsIcon,
@@ -26,10 +33,10 @@ const solutions = [
     description:
       "Connected financial operations, reporting, planning, controls, and decision support.",
     capabilities: [
-      "General ledger",
-      "Payables and receivables",
-      "Budget management",
-      "Financial reporting",
+      "Financial management",
+      "Reporting",
+      "Forecasting",
+      "Compliance",
     ],
   },
   {
@@ -38,10 +45,10 @@ const solutions = [
     description:
       "Structured purchasing, supplier collaboration, approvals, contract tracking, and spend visibility.",
     capabilities: [
-      "Purchase orders",
       "Vendor management",
+      "Purchase automation",
+      "Spend control",
       "Approval workflows",
-      "Spend analysis",
     ],
   },
   {
@@ -51,9 +58,9 @@ const solutions = [
       "Production planning and execution connected to inventory, quality, costing, and supply.",
     capabilities: [
       "Production planning",
-      "Work orders",
-      "Quality control",
-      "Cost management",
+      "Shop floor control",
+      "Quality management",
+      "Cost control",
     ],
   },
   {
@@ -62,10 +69,10 @@ const solutions = [
     description:
       "Real-time inventory visibility and warehouse processes designed for accuracy and availability.",
     capabilities: [
+      "Warehouse optimization",
       "Inventory tracking",
-      "Warehouse management",
       "Cycle counting",
-      "Replenishment",
+      "Replenishment planning",
     ],
   },
   {
@@ -74,9 +81,9 @@ const solutions = [
     description:
       "Planning and execution across suppliers, logistics, warehouses, demand, and customer commitments.",
     capabilities: [
+      "Logistics",
+      "Distribution",
       "Demand planning",
-      "Supplier management",
-      "Transportation",
       "Supply analytics",
     ],
   },

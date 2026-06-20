@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import {
   ArrowRightIcon,
@@ -7,6 +8,7 @@ import {
   ContainerIcon,
   DatabaseIcon,
   PlugZapIcon,
+  PanelsTopLeftIcon,
 } from "lucide-react"
 
 import { PageHero } from "@/components/PageHero"
@@ -21,7 +23,14 @@ import {
 } from "@/components/ui/card"
 import { technologyGroups } from "@/content/capabilities"
 
+export const metadata: Metadata = {
+  title: "Technologies | NM Global Technologies",
+  description:
+    "ERP platforms, modern engineering frameworks, databases, cloud platforms, DevOps, and integration technologies.",
+}
+
 const groupIcons = {
+  "ERP Platforms": PanelsTopLeftIcon,
   Frontend: Code2Icon,
   Backend: BracesIcon,
   Databases: DatabaseIcon,

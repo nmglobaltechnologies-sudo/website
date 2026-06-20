@@ -10,9 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/solutions',
     '/industries',
     '/technologies',
+    '/case-studies',
+    '/resources',
+    '/careers',
     '/contact',
     '/privacy-policy',
     '/terms',
+    '/cookie-policy',
   ];
 
   const staticPages = routes.map((route) => ({

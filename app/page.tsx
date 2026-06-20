@@ -8,7 +8,11 @@ import {
   CloudCogIcon,
   CodeXmlIcon,
   DatabaseZapIcon,
+  GaugeIcon,
+  Globe2Icon,
   NetworkIcon,
+  PuzzleIcon,
+  ShieldCheckIcon,
   WorkflowIcon,
 } from "lucide-react"
 
@@ -23,6 +27,7 @@ import {
 } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { servicePlatforms, technologyGroups } from "@/content/capabilities"
+import { industryProfiles } from "@/content/requirements"
 
 const platformIcons = {
   "jd-edwards": DatabaseZapIcon,
@@ -31,6 +36,7 @@ const platformIcons = {
   sap: BlocksIcon,
   "dynamics-365": NetworkIcon,
   "custom-software": CodeXmlIcon,
+  "cloud-infrastructure": CloudCogIcon,
   "ai-automation": BotIcon,
 }
 
@@ -61,6 +67,48 @@ const deliverySteps = [
   },
 ]
 
+const trustIndicators = [
+  "Enterprise software specialists",
+  "Global delivery model",
+  "Certified consultants",
+  "End-to-end support",
+  "Cloud & AI expertise",
+  "Flexible engagement models",
+]
+
+const whyChooseUs = [
+  {
+    icon: DatabaseZapIcon,
+    title: "Deep ERP expertise",
+    description: "Specialists across established enterprise platforms and operating models.",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "Enterprise-grade delivery",
+    description: "Architecture, security, testing, and support considered throughout delivery.",
+  },
+  {
+    icon: Globe2Icon,
+    title: "Cost-effective delivery",
+    description: "Flexible teams and engagement models aligned to the work and timeline.",
+  },
+  {
+    icon: GaugeIcon,
+    title: "Rapid implementation",
+    description: "Clear increments, practical governance, and early validation reduce delivery drag.",
+  },
+  {
+    icon: WorkflowIcon,
+    title: "Long-term support",
+    description: "Continuity from roadmap and implementation into managed operations.",
+  },
+  {
+    icon: PuzzleIcon,
+    title: "Technology agnostic",
+    description: "Recommendations are based on fit, maintainability, and measurable business value.",
+  },
+]
+
 export default function HomePage() {
   const featuredPlatforms = servicePlatforms.slice(0, 5)
   const software = servicePlatforms.find(
@@ -68,6 +116,9 @@ export default function HomePage() {
   )
   const intelligence = servicePlatforms.find(
     (platform) => platform.id === "ai-automation"
+  )
+  const cloud = servicePlatforms.find(
+    (platform) => platform.id === "cloud-infrastructure"
   )
 
   return (
@@ -80,12 +131,12 @@ export default function HomePage() {
         <div className="mx-auto grid min-h-[calc(100vh-4.5rem)] max-w-7xl items-center gap-16 px-5 py-20 md:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:py-24">
           <div>
             <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[1.04] tracking-[-0.045em] md:text-7xl">
-              Enterprise transformation, engineered end to end.
+              Transform your business with ERP, cloud, AI, and enterprise software.
             </h1>
             <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground md:text-xl">
-              Connect ERP, custom software, cloud platforms, data, and
-              intelligent automation into one operating system for your
-              business.
+              Expert consulting and implementation across JD Edwards, Oracle
+              Fusion Cloud, NetSuite, SAP, Microsoft Dynamics, AI automation,
+              cloud platforms, and custom software development.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -93,7 +144,7 @@ export default function HomePage() {
                 nativeButton={false}
                 size="lg"
               >
-                Explore capabilities
+                Schedule consultation
                 <ArrowRightIcon data-icon="inline-end" />
               </Button>
               <Button
@@ -102,19 +153,17 @@ export default function HomePage() {
                 variant="outline"
                 size="lg"
               >
-                Talk to an expert
+                Contact us
               </Button>
             </div>
 
             <div className="mt-12 grid max-w-2xl grid-cols-2 gap-x-8 gap-y-4 border-t pt-7 text-sm text-muted-foreground sm:grid-cols-4">
-              {["ERP strategy", "Implementation", "Integration", "Managed support"].map(
-                (item) => (
+              {trustIndicators.map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <CheckIcon className="size-4 text-primary" />
                     <span>{item}</span>
                   </div>
-                )
-              )}
+                ))}
             </div>
           </div>
 
@@ -255,8 +304,8 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {[software, intelligence].map((platform) => {
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {[software, cloud, intelligence].map((platform) => {
               if (!platform) return null
               const Icon =
                 platformIcons[platform.id as keyof typeof platformIcons]
@@ -332,6 +381,71 @@ export default function HomePage() {
 
       <section className="border-y bg-card">
         <div className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
+                Industry context built into the roadmap.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-muted-foreground">
+                Platform expertise is paired with the operational needs,
+                constraints, and integration patterns of each environment.
+              </p>
+              <Button
+                render={<Link href="/industries" />}
+                nativeButton={false}
+                variant="outline"
+                className="mt-7"
+              >
+                Explore industries
+                <ArrowRightIcon data-icon="inline-end" />
+              </Button>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {industryProfiles.map((industry) => (
+                <div
+                  key={industry.id}
+                  className="rounded-2xl border bg-background p-5"
+                >
+                  <h3 className="font-semibold">{industry.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {industry.summary}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
+        <div className="max-w-3xl">
+          <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
+            Why organizations work with NM Global.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            One accountable delivery model across enterprise platforms,
+            engineering, cloud, automation, and support.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {whyChooseUs.map((item) => (
+            <Card key={item.title}>
+              <CardHeader className="p-6">
+                <span className="mb-4 flex size-11 items-center justify-center rounded-xl bg-secondary text-secondary-foreground">
+                  <item.icon className="size-5" />
+                </span>
+                <CardTitle className="text-xl">{item.title}</CardTitle>
+                <CardDescription className="leading-6">
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y bg-card">
+        <div className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
           <div className="max-w-3xl">
             <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">
               From roadmap to reliable operations.
@@ -369,11 +483,11 @@ export default function HomePage() {
           <div className="relative grid items-end gap-8 lg:grid-cols-[1fr_auto]">
             <div>
               <h2 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
-                Make your next technology decision part of a coherent roadmap.
+                Ready to modernize your business?
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-primary-foreground/75">
-                Bring us the business objective, the current environment, or
-                the difficult integration. We’ll help define the next move.
+                Book a free consultation to turn your ERP, cloud, software, or
+                automation priorities into a coherent roadmap.
               </p>
             </div>
             <Button
@@ -382,7 +496,7 @@ export default function HomePage() {
               variant="secondary"
               size="lg"
             >
-              Start a conversation
+              Book a free consultation
               <ArrowRightIcon data-icon="inline-end" />
             </Button>
           </div>
