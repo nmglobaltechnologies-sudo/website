@@ -51,7 +51,7 @@ export default function TechnologiesPage() {
           nativeButton={false}
           size="lg"
         >
-          Discuss your architecture
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

@@ -2,7 +2,7 @@
 # Copy this file to .env.local and fill in your values
 
 # Contact Form Email Configuration
-CONTACT_EMAIL=info@nmglobal.com
+CONTACT_EMAIL=support@nmglobal.com
 FROM_EMAIL=noreply@nmglobal.com
 
 # Email Service Provider (Choose one)

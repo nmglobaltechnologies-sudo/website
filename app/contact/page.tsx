@@ -33,10 +33,10 @@ const contactMethods = [
     description: "Send requirements or request a consultation.",
     content: (
       <a
-        href="mailto:info@nmglobal.com"
+        href="mailto:support@nmglobal.com"
         className="font-medium text-primary hover:underline"
       >
-        info@nmglobal.com
+        support@nmglobal.com
       </a>
     ),
   },

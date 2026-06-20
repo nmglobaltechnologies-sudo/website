@@ -142,13 +142,13 @@ To enable the contact form, configure one of the following email services:
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_key
 AWS_SECRET_ACCESS_KEY=your_secret
-CONTACT_EMAIL=info@nmglobal.com
+CONTACT_EMAIL=support@nmglobal.com
 ```
 
 ### Option 2: SendGrid
 ```env
 SENDGRID_API_KEY=your_api_key
-CONTACT_EMAIL=info@nmglobal.com
+CONTACT_EMAIL=support@nmglobal.com
 ```
 
 ### Option 3: SMTP
@@ -157,7 +157,7 @@ SMTP_HOST=smtp.example.com
 SMTP_PORT=587
 SMTP_USER=your_user
 SMTP_PASS=your_password
-CONTACT_EMAIL=info@nmglobal.com
+CONTACT_EMAIL=support@nmglobal.com
 ```
 
 ## 📊 Analytics
@@ -213,6 +213,6 @@ Copyright © 2025 NM Global Technologies. All rights reserved.
 ## 📞 Support
 
 For questions or support:
-- Email: info@nmglobal.com
+- Email: support@nmglobal.com
 - Phone: +1 (234) 567-8900
 - Website: [nmglobal.com](https://nmglobal.com)

@@ -87,7 +87,7 @@ export default function ServicesPage() {
             nativeButton={false}
             size="lg"
           >
-            Discuss your requirements
+            Schedule consultation
             <ArrowRightIcon data-icon="inline-end" />
           </Button>
           <Button
@@ -96,7 +96,7 @@ export default function ServicesPage() {
             variant="outline"
             size="lg"
           >
-            View technology stack
+            Technology stack
           </Button>
         </div>
       </PageHero>

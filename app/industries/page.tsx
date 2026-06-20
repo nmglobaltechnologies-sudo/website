@@ -32,7 +32,7 @@ export default function IndustriesPage() {
           nativeButton={false}
           size="lg"
         >
-          Discuss your industry
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

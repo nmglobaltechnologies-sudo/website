@@ -89,7 +89,7 @@ export default function AboutPage() {
           nativeButton={false}
           size="lg"
         >
-          Work with NM Global
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

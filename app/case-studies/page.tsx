@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
           nativeButton={false}
           size="lg"
         >
-          Discuss a similar challenge
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

@@ -56,10 +56,10 @@ export default function CookiePolicyPage() {
             <p className="mt-3">
               Questions about this policy can be sent to{" "}
               <a
-                href="mailto:info@nmglobal.com"
+                href="mailto:support@nmglobal.com"
                 className="font-medium text-primary underline"
               >
-                info@nmglobal.com
+                support@nmglobal.com
               </a>
               .
             </p>

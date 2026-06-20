@@ -113,7 +113,7 @@ export default function SolutionsPage() {
           nativeButton={false}
           size="lg"
         >
-          Discuss a business process
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

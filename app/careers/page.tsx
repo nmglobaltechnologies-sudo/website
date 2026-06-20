@@ -139,6 +139,14 @@ export default function CareersPage() {
             <p className="mt-4 leading-7 text-muted-foreground">
               The form validates locally. No resume or personal information is
               uploaded until a secure recruitment destination is configured.
+              You can also contact{" "}
+              <a
+                href="mailto:hr@nmglobal.com"
+                className="font-medium text-primary underline"
+              >
+                hr@nmglobal.com
+              </a>
+              .
             </p>
           </div>
           <Card>

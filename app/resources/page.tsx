@@ -51,7 +51,7 @@ export default function ResourcesPage() {
           nativeButton={false}
           size="lg"
         >
-          Ask a specific question
+          Schedule consultation
           <ArrowRightIcon data-icon="inline-end" />
         </Button>
       </PageHero>

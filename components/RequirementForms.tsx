@@ -34,15 +34,22 @@ function useLocalForm() {
   return { status, handleSubmit }
 }
 
-function ConfigurationNotice() {
+function ConfigurationNotice({
+  email = "support@nmglobal.com",
+}: {
+  email?: string
+}) {
   return (
     <Alert>
       <CircleAlertIcon />
       <AlertTitle>Submission is not connected yet</AlertTitle>
       <AlertDescription>
         No information was sent or uploaded. Please email the details to{" "}
-        <a className="font-medium text-primary underline" href="mailto:info@nmglobal.com">
-          info@nmglobal.com
+        <a
+          className="font-medium text-primary underline"
+          href={`mailto:${email}`}
+        >
+          {email}
         </a>{" "}
         until a secure submission destination is configured.
       </AlertDescription>
@@ -230,7 +237,9 @@ export function CareerApplicationForm() {
           <Textarea id="career-message" name="message" required minLength={20} />
         </Field>
 
-        {status === "not-configured" ? <ConfigurationNotice /> : null}
+        {status === "not-configured" ? (
+          <ConfigurationNotice email="hr@nmglobal.com" />
+        ) : null}
 
         <Button type="submit" size="lg" className="w-fit">
           Prepare application
