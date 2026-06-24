@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="list-disc pl-6 text-neutral mb-6 space-y-2">
             <li>Name, email address, phone number, and company information</li>
-            <li>Information you provide in forms, surveys, or correspondence</li>
+            <li>Information you provide in Google Forms, surveys, or correspondence</li>
             <li>Professional information relevant to our services</li>
             <li>Payment and billing information (processed securely through third-party providers)</li>
           </ul>
@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
 
           <h2 className="text-3xl font-bold text-primary mb-4">7. Cookies and Tracking</h2>
           <p className="text-neutral leading-relaxed mb-6">
-            We use cookies and similar tracking technologies to collect information about your browsing activities. You can control cookies through your browser settings.
+            The website stores theme preferences in the browser and embeds Google Forms for contact and job application submissions. Google Forms may process browser data and submitted responses according to Google&apos;s own terms. You can control cookies through your browser settings.
           </p>
 
           <h2 className="text-3xl font-bold text-primary mb-4">8. International Data Transfers</h2>
@@ -90,9 +90,7 @@ export default function PrivacyPolicyPage() {
             If you have questions about this Privacy Policy, please contact us at:
             <br /><br />
             NM Global Technologies<br />
-            Email: privacy@nmglobal.com<br />
-            Phone: +1 (234) 567-8900<br />
-            Address: 1234 Business Park Dr., Suite 100, City, ST 12345
+            Email: privacy@nmglobaltech.com
           </p>
         </div>
       </Section>

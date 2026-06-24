@@ -3,19 +3,12 @@ import Link from "next/link"
 import {
   ArrowRightIcon,
   BookOpenIcon,
-  CircleHelpIcon,
   FileTextIcon,
   TrophyIcon,
 } from "lucide-react"
 
 import { NewsletterForm } from "@/components/RequirementForms"
 import { PageHero } from "@/components/PageHero"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -93,29 +86,22 @@ export default function ResourcesPage() {
             />
           </TabsContent>
           <TabsContent value="faqs" className="pt-10" id="faqs">
-            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-              <div>
-                <CircleHelpIcon className="size-8 text-primary" />
-                <h2 className="mt-5 text-3xl font-semibold tracking-tight">
-                  Frequently asked questions
-                </h2>
-                <p className="mt-4 leading-7 text-muted-foreground">
-                  Initial answers covering ERP strategy, implementation, and
-                  support.
-                </p>
-              </div>
-              <Accordion>
-                {resourceTopics.faqs.map((item) => (
-                  <AccordionItem key={item.question} value={item.question}>
-                    <AccordionTrigger>{item.question}</AccordionTrigger>
-                    <AccordionContent>
-                      <p className="leading-7 text-muted-foreground">
-                        {item.answer}
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+            <div className="max-w-3xl">
+              <h2 className="text-3xl font-semibold tracking-tight">
+                Frequently asked questions
+              </h2>
+              <p className="mt-4 leading-7 text-muted-foreground">
+                Common questions now live on a dedicated FAQ page covering
+                services, ERP platforms, cloud, integrations, AI, and support.
+              </p>
+              <Button
+                render={<Link href="/faqs" />}
+                nativeButton={false}
+                className="mt-6"
+              >
+                View FAQs
+                <ArrowRightIcon data-icon="inline-end" />
+              </Button>
             </div>
           </TabsContent>
         </Tabs>

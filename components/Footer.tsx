@@ -87,10 +87,10 @@ export function Footer() {
                 </span>
               </p>
               <a
-                href="mailto:support@nmglobal.com"
+                href="mailto:support@nmglobaltech.com"
                 className="inline-flex items-center gap-1 hover:text-foreground"
               >
-                support@nmglobal.com
+                support@nmglobaltech.com
                 <ArrowUpRightIcon className="size-4" />
               </a>
             </div>

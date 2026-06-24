@@ -175,6 +175,81 @@ export const resourceTopics = {
   ],
 }
 
+export const serviceFaqs = [
+  {
+    question: "What services does NM Global Technologies provide?",
+    answer:
+      "NM Global Technologies provides ERP consulting, cloud and infrastructure services, custom software development, integrations, AI automation, business intelligence, and managed support.",
+    category: "General",
+  },
+  {
+    question: "Which ERP platforms do you support?",
+    answer:
+      "The service catalog covers JD Edwards EnterpriseOne, Oracle Fusion Cloud, Oracle NetSuite, SAP, and Microsoft Dynamics 365.",
+    category: "ERP",
+  },
+  {
+    question: "Can you help with both implementation and ongoing support?",
+    answer:
+      "Yes. Engagements can include assessment, roadmap planning, implementation, migration, integration, user training, production support, monitoring, enhancements, and managed services.",
+    category: "Delivery",
+  },
+  {
+    question: "Do you work with existing ERP systems or only new implementations?",
+    answer:
+      "Both. NM Global can support new implementations, upgrades, migrations, optimization programs, integrations, and improvements to existing environments.",
+    category: "ERP",
+  },
+  {
+    question: "Can NM Global build custom applications around an ERP system?",
+    answer:
+      "Yes. Custom web applications, mobile apps, portals, APIs, microservices, and cloud-native products can be built around existing enterprise systems.",
+    category: "Software",
+  },
+  {
+    question: "What cloud platforms do you work with?",
+    answer:
+      "Cloud services cover AWS, Microsoft Azure, Oracle Cloud Infrastructure, and Google Cloud Platform, including migration, DevOps, observability, and managed infrastructure.",
+    category: "Cloud",
+  },
+  {
+    question: "Can you integrate ERP systems with third-party tools?",
+    answer:
+      "Yes. Integration services include REST APIs, SOAP APIs, Oracle Integration Cloud, MuleSoft, Boomi, middleware patterns, and third-party system integrations.",
+    category: "Integration",
+  },
+  {
+    question: "Do you provide AI and automation solutions?",
+    answer:
+      "Yes. Services include AI agents, chatbots, workflow automation, document processing, OCR, predictive analytics, business intelligence, and generative AI solutions.",
+    category: "AI",
+  },
+  {
+    question: "Which industries do you serve?",
+    answer:
+      "The website covers manufacturing, construction, distribution, retail, healthcare, logistics, and financial services.",
+    category: "Industries",
+  },
+  {
+    question: "How does a typical engagement start?",
+    answer:
+      "A typical engagement starts with discovery: business goals, current systems, integrations, risks, users, timelines, and target outcomes are reviewed before recommending a roadmap.",
+    category: "Delivery",
+  },
+  {
+    question: "Can you provide staff augmentation?",
+    answer:
+      "Yes. NM Global can support staff augmentation needs across ERP consultants, developers, project managers, QA engineers, support analysts, and related technical roles.",
+    category: "Staffing",
+  },
+  {
+    question: "How can we request a consultation?",
+    answer:
+      "Use the contact Google Form on the Contact page or email support@nmglobaltech.com with your company details, service interest, and project context.",
+    category: "Contact",
+  },
+]
+
 export const careerGroups = [
   {
     title: "ERP Consulting",

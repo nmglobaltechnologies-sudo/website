@@ -35,7 +35,7 @@ function useLocalForm() {
 }
 
 function ConfigurationNotice({
-  email = "support@nmglobal.com",
+  email = "support@nmglobaltech.com",
 }: {
   email?: string
 }) {
@@ -238,7 +238,7 @@ export function CareerApplicationForm() {
         </Field>
 
         {status === "not-configured" ? (
-          <ConfigurationNotice email="hr@nmglobal.com" />
+          <ConfigurationNotice email="hr@nmglobaltech.com" />
         ) : null}
 
         <Button type="submit" size="lg" className="w-fit">
@@ -263,7 +263,7 @@ export function NewsletterForm() {
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="you@company.com"
+            placeholder="Business email"
             required
           />
           <Button type="submit">Subscribe</Button>

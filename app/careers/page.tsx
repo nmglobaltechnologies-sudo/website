@@ -7,7 +7,7 @@ import {
   LaptopIcon,
 } from "lucide-react"
 
-import { CareerApplicationForm } from "@/components/RequirementForms"
+import { GoogleFormEmbed } from "@/components/GoogleFormEmbed"
 import { PageHero } from "@/components/PageHero"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Badge } from "@/components/ui/badge"
@@ -137,21 +137,29 @@ export default function CareersPage() {
               Prepare an application
             </h2>
             <p className="mt-4 leading-7 text-muted-foreground">
-              The form validates locally. No resume or personal information is
-              uploaded until a secure recruitment destination is configured.
+              Submit your career details through the NM Global job application
+              form.
               You can also contact{" "}
               <a
-                href="mailto:hr@nmglobal.com"
+                href="mailto:hr@nmglobaltech.com"
                 className="font-medium text-primary underline"
               >
-                hr@nmglobal.com
+                hr@nmglobaltech.com
               </a>
               .
             </p>
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <CareerApplicationForm />
+              <GoogleFormEmbed
+                title="NM Global job application"
+                description="Use this form to submit your profile for professional roles, graduate programs, or internships."
+                embedUrl="https://docs.google.com/forms/d/e/1FAIpQLSexaoRmD6jLxFgA31Bw0YMqVq_ILoCI_qcHbM42p5pkXXrSGw/viewform?embedded=true"
+                openUrl="https://docs.google.com/forms/d/e/1FAIpQLSexaoRmD6jLxFgA31Bw0YMqVq_ILoCI_qcHbM42p5pkXXrSGw/viewform?usp=publish-editor"
+                mode="link-card"
+                openLabel="Open job application form"
+                note="The job application form opens directly in Google Forms so candidates get the complete application experience without the embedded preview limitation."
+              />
             </CardContent>
           </Card>
         </div>

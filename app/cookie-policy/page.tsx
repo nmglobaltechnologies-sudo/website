@@ -24,8 +24,10 @@ export default function CookiePolicyPage() {
             <p className="mt-3">
               The current website does not use advertising cookies, analytics
               cookies, embedded maps, scheduling widgets, or newsletter
-              tracking. The theme preference may be stored in the browser so
-              the selected light or dark appearance can be restored.
+              tracking. Google Forms are embedded on the Contact and Careers
+              pages for support intake and job applications. The theme
+              preference may be stored in the browser so the selected light or
+              dark appearance can be restored.
             </p>
           </section>
           <section>
@@ -33,10 +35,12 @@ export default function CookiePolicyPage() {
               Third-party services
             </h2>
             <p className="mt-3">
-              Google Maps, Calendly, analytics, social media widgets,
-              newsletters, and similar services are not currently active.
-              These providers may set cookies or process visitor data if they
-              are enabled later.
+              Google Forms is currently used for inquiry and application
+              submission. Google may process form responses and browser data
+              according to its own terms. Google Maps, Calendly, analytics,
+              social media widgets, newsletters, and similar services are not
+              currently active. These providers may set cookies or process
+              visitor data if they are enabled later.
             </p>
           </section>
           <section>
@@ -56,10 +60,10 @@ export default function CookiePolicyPage() {
             <p className="mt-3">
               Questions about this policy can be sent to{" "}
               <a
-                href="mailto:support@nmglobal.com"
+                href="mailto:support@nmglobaltech.com"
                 className="font-medium text-primary underline"
               >
-                support@nmglobal.com
+                support@nmglobaltech.com
               </a>
               .
             </p>

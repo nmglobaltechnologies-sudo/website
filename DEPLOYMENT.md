@@ -216,7 +216,7 @@ npm run build
 ## Support
 
 For deployment assistance:
-- Email: dev@nmglobal.com
+- Email: dev@nmglobaltech.com
 - Documentation: See README.md
 - Next.js Docs: https://nextjs.org/docs
 

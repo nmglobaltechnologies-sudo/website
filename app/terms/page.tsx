@@ -86,9 +86,7 @@ export default function TermsPage() {
             For questions about these Terms of Use, please contact us at:
             <br /><br />
             NM Global Technologies<br />
-            Email: legal@nmglobal.com<br />
-            Phone: +1 (234) 567-8900<br />
-            Address: 1234 Business Park Dr., Suite 100, City, ST 12345
+            Email: legal@nmglobaltech.com
           </p>
         </div>
       </Section>

@@ -9,7 +9,8 @@ import {
   Share2Icon,
 } from "lucide-react"
 
-import { ContactForm, NewsletterForm } from "@/components/RequirementForms"
+import { GoogleFormEmbed } from "@/components/GoogleFormEmbed"
+import { NewsletterForm } from "@/components/RequirementForms"
 import { PageHero } from "@/components/PageHero"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import {
@@ -33,10 +34,10 @@ const contactMethods = [
     description: "Send requirements or request a consultation.",
     content: (
       <a
-        href="mailto:support@nmglobal.com"
+        href="mailto:support@nmglobaltech.com"
         className="font-medium text-primary hover:underline"
       >
-        support@nmglobal.com
+        support@nmglobaltech.com
       </a>
     ),
   },
@@ -133,12 +134,17 @@ export default function ContactPage() {
             <CardHeader className="p-7 md:p-9">
               <CardTitle className="text-3xl">Tell us what you need</CardTitle>
               <CardDescription className="text-base leading-7">
-                Fields validate locally. Nothing is transmitted until a secure
-                submission service is configured.
+                Submit your requirements through the NM Global support intake
+                form. Google Forms stores responses for the support team.
               </CardDescription>
             </CardHeader>
             <CardContent className="px-7 pb-9 md:px-9">
-              <ContactForm />
+              <GoogleFormEmbed
+                title="NM Global support intake"
+                description="Use this form to share your business objective, service interest, and contact details."
+                embedUrl="https://docs.google.com/forms/d/e/1FAIpQLSepKtf1GBoYTrVHJO8G-XKlfhUY0rxKMuf-majMld1lHn0TRQ/viewform?embedded=true"
+                openUrl="https://docs.google.com/forms/d/e/1FAIpQLSepKtf1GBoYTrVHJO8G-XKlfhUY0rxKMuf-majMld1lHn0TRQ/viewform?usp=publish-editor"
+              />
             </CardContent>
           </Card>
         </div>

@@ -48,6 +48,11 @@ export const navigation: NavigationEntry[] = [
         label: "Case Studies",
         description: "Representative enterprise engagement scenarios.",
       },
+      {
+        href: "/faqs",
+        label: "FAQs",
+        description: "Common service, ERP, cloud, AI, and support questions.",
+      },
     ],
   },
   { href: "/careers", label: "Careers" },
@@ -64,5 +69,5 @@ export const footerResourceLinks = [
   { href: "/resources", label: "Resources" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/resources#whitepapers", label: "Whitepapers" },
-  { href: "/resources#faqs", label: "FAQs" },
+  { href: "/faqs", label: "FAQs" },
 ]
